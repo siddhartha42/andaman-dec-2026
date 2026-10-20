@@ -150,6 +150,19 @@ td small { font-size: .95rem; line-height: 1.65; margin-top: 9px; }
   .booking-group h3 { font-size: 1.25rem; }
 }
 @media (prefers-reduced-motion: reduce) { :root { scroll-behavior: auto; } }
+.top nav { margin-inline-start: auto; }
+.top-inner { column-gap: 12px; }
+.theme-picker { display: inline-flex; flex-shrink: 0; gap: 2px; padding: 3px; border: 1px solid var(--line); border-radius: 11px; background: var(--soft); }
+.theme-picker button { min-height: 44px; padding: 7px 12px; border: 0; border-radius: 8px; background: transparent; color: var(--ink); font: 650 .9rem/1.4 ui-sans-serif, system-ui, sans-serif; cursor: pointer; }
+.theme-picker button[aria-pressed="true"] { background: var(--accent); color: var(--paper); }
+.theme-picker button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+@media (max-width: 900px) {
+  .top-inner { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 8px; padding-block: 12px; }
+  .brand { grid-column: 1; grid-row: 1; font-size: 1.1rem; }
+  .theme-picker { grid-column: 2; grid-row: 1; }
+  .theme-picker button { padding-inline: 10px; }
+  .top nav { grid-column: 1 / -1; grid-row: 2; margin-inline-start: 0; width: 100%; flex-wrap: wrap; }
+}
 </style>
 
 <meta name="description" content="The shared Andaman trip plan for five friends, 11–18 December 2026. Interactive routes, itinerary, budget, hotel shortlist and booking status.">
@@ -157,11 +170,20 @@ td small { font-size: .95rem; line-height: 1.65; margin-top: 9px; }
 <meta property="og:title" content="Andaman 2026 · Our trip plan">
 <meta property="og:description" content="11–18 December · 5 friends · Port Blair, Havelock, Neil and Baratang. Route map, itinerary, ₹58k/person working budget and booking status.">
 <meta name="theme-color" content="#075675">
-</head>
+<script>(() => {
+  let theme;
+  try { theme = localStorage.getItem('andaman-dec-2026:theme'); } catch {}
+  if (theme !== 'light' && theme !== 'dark') {
+    theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  document.documentElement.dataset.theme = theme;
+  document.documentElement.style.colorScheme = theme;
+})();
+</script></head>
 <body>
 
 <a class="skip" href="#itinerary">Skip to itinerary</a>
-<header class="top" id="top"><div class="shell top-inner"><a class="brand" href="#top">Andaman<span> / 2026</span></a><nav aria-label="Trip sections"><a href="#map">Route map</a><a href="#itinerary">Day by day</a><a href="#budget">Budget</a><a href="#stays">Stays</a><a href="#bookings">To book</a></nav></div></header>
+<header class="top" id="top"><div class="shell top-inner"><a class="brand" href="#top">Andaman<span> / 2026</span></a><nav aria-label="Trip sections"><a href="#map">Route map</a><a href="#itinerary">Day by day</a><a href="#budget">Budget</a><a href="#stays">Stays</a><a href="#bookings">To book</a></nav><div class="theme-picker" role="group" aria-label="Page appearance"><button type="button" data-theme-choice="light" aria-pressed="false">Light</button><button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button></div></div></header>
 <section class="hero" aria-labelledby="trip-title"><div class="shell"><div class="hero-inner"><div class="eyebrow">11–18 December 2026 · Five friends · Seven nights</div><h1 id="trip-title">A week in<span>the Andamans.</span></h1><p class="intro">Reefs, mangroves and quiet beaches. A practical route through Port Blair, Havelock and Neil, with time for the limestone caves and the islands’ history.</p><div class="hero-tags"><span class="draft">Planning draft</span><span>Updated 20 Oct 2026</span><span>2 rooms · 2 + 3 adults</span></div></div><div class="hero-art" aria-hidden="true"><svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg">
 <defs><linearGradient id="lagoon" x1="45" y1="90" x2="430" y2="330" gradientUnits="userSpaceOnUse"><stop stop-color="#6ED8CB"/><stop offset="1" stop-color="#1C9DA8"/></linearGradient><linearGradient id="canopy" x1="170" y1="110" x2="300" y2="250" gradientUnits="userSpaceOnUse"><stop stop-color="#245D49"/><stop offset="1" stop-color="#113F3D"/></linearGradient></defs>
 <circle cx="391" cy="63" r="25" fill="#FFDE98"/>
@@ -1692,7 +1714,17 @@ body { line-height: 1.65; }
 #andaman-trip-map .map-header { margin-bottom: 14px; }
 #andaman-trip-map h2 { padding-inline-end: 0; }
 #andaman-trip-map details summary { min-height: 44px; }
-&lt;/style&gt;&lt;/head&gt;
+&lt;/style&gt;&lt;script&gt;(() =&gt; {
+  window.addEventListener(&#x27;message&#x27;, event =&gt; {
+    if (event.source !== parent || event.data?.type !== &#x27;andaman-display-theme&#x27;) return;
+    const theme = event.data.theme;
+    if (theme !== &#x27;light&#x27; &amp;&amp; theme !== &#x27;dark&#x27;) return;
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
+  });
+  parent.postMessage({type: &#x27;andaman-display-theme-ready&#x27;}, &#x27;*&#x27;);
+})();
+&lt;/script&gt;&lt;/head&gt;
 &lt;body&gt;
 &lt;script type=&quot;application/json&quot; id=&quot;codex-visualization-widget-state&quot;&gt;__CODEX_VISUALIZATION_WIDGET_STATE__&lt;/script&gt;
 &lt;script&gt;(() =&gt; {
@@ -3101,5 +3133,37 @@ body { line-height: 1.65; }
 </ol></div></div><p class="fine">Keep major hotels, inter-island ferries, Baratang and the water activities out of the last-minute list. All ground items above remain unbooked until confirmed reservations are added to the plan.</p></section>
 <details class="sources"><summary>Planning references &amp; status</summary><p style="margin-top:12px">Updated 20 October 2026. Travel times are allowances; published menus and tariffs may change. Hotels, ferries and activities have not been booked or date-quoted. Flight costs are traveller-reported; flight timings are unverified.</p><div class="source-links"><a href="https://www.gonautika.com/" target="_blank" rel="noopener noreferrer">Nautika ferries ↗</a><a href="https://www.makruzz.com/" target="_blank" rel="noopener noreferrer">Makruzz ferries ↗</a><a href="https://seahawksscuba.in/try-scuba-diving/" target="_blank" rel="noopener noreferrer">Scuba menu ↗</a><a href="https://seahawksscuba.in/snorkelling-kayaking/" target="_blank" rel="noopener noreferrer">Snorkelling &amp; kayaking ↗</a><a href="https://www.islandcabservices.com/cabs/" target="_blank" rel="noopener noreferrer">Published cab references ↗</a><a href="https://www.andamantourism.gov.in/" target="_blank" rel="noopener noreferrer">Andaman Tourism ↗</a></div></details>
 </main><footer class="footer"><div class="shell footer-inner"><span>Andaman 2026 · Shared trip planning draft · All times IST</span><a href="#top">Back to top ↑</a></div></footer>
-</body>
+<script>(() => {
+  const key = 'andaman-dec-2026:theme';
+  const root = document.documentElement;
+  const frame = document.getElementById('codex-visualization');
+  const buttons = [...document.querySelectorAll('[data-theme-choice]')];
+  const system = matchMedia('(prefers-color-scheme: dark)');
+  let preference;
+  try { preference = localStorage.getItem(key); } catch {}
+  if (preference !== 'light' && preference !== 'dark') preference = null;
+  const syncMap = () => {
+    frame?.contentWindow?.postMessage({type: 'andaman-display-theme', theme: root.dataset.theme}, '*');
+  };
+  function apply(theme, remember = false) {
+    root.dataset.theme = theme;
+    root.style.colorScheme = theme;
+    buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.themeChoice === theme)));
+    if (remember) {
+      preference = theme;
+      try { localStorage.setItem(key, theme); } catch {}
+    }
+    syncMap();
+  }
+  buttons.forEach(button => button.addEventListener('click', () => apply(button.dataset.themeChoice, true)));
+  frame?.addEventListener('load', syncMap);
+  window.addEventListener('message', event => {
+    if (event.source === frame?.contentWindow && event.data?.type === 'andaman-display-theme-ready') syncMap();
+  });
+  system.addEventListener('change', () => {
+    if (!preference) apply(system.matches ? 'dark' : 'light');
+  });
+  apply(preference || (system.matches ? 'dark' : 'light'));
+})();
+</script></body>
 </html>
