@@ -12,19 +12,172 @@
 @media(max-width:760px){.top nav{flex-wrap:wrap;overflow:visible;width:100%}}
 @media(max-width:440px){.itinerary-table tr{grid-template-columns:minmax(0,1fr)}.itinerary-table td{grid-column:1}.itinerary-table td.day-cell{grid-column:1;grid-row:auto;width:auto;margin-bottom:8px;padding-right:0;font-weight:650}.itinerary-table td.sleep-cell{grid-column:1}}
 @media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}}
+/* Coastal colour and readability layer for the published trip guide. */
+:root {
+  --page: light-dark(#faf7ef, #092532);
+  --paper: light-dark(#fffdf8, #123440);
+  --ink: light-dark(#153446, #f7f5ed);
+  --muted: light-dark(#3d5361, #d0e0e4);
+  --line: light-dark(#c4d4d6, #4b6b76);
+  --accent: light-dark(#006b71, #91e5d5);
+  --soft: light-dark(#e1f2ee, #1b4650);
+  --gold: light-dark(#754300, #ffdfa6);
+  --gold-soft: light-dark(#fff0ce, #4b3b22);
+  --hero: #075675;
+  --hero-ink: #fffdf5;
+  --urgent: light-dark(#993f29, #ffd1b9);
+  --urgent-soft: light-dark(#fff0e7, #4c342d);
+  --arrival: light-dark(#285f45, #aee5bd);
+  --arrival-soft: light-dark(#eaf3e5, #244337);
+}
+body { font-size: 17px; line-height: 1.75; }
+h2, h3 { letter-spacing: -.025em; line-height: 1.3; }
+h2 { font-size: clamp(1.8rem, 3vw, 2.3rem); }
+p, li, td { overflow-wrap: break-word; }
+a { text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
+.top { border-bottom: 2px solid var(--line); }
+.top-inner { min-height: 80px; }
+.brand { font-size: 1.25rem; letter-spacing: -.035em; }
+.top nav { gap: 8px; }
+.top nav a {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 8px 12px; border-radius: 9px;
+  color: var(--ink); font-size: .96rem; font-weight: 650;
+}
+.top nav a:hover { color: var(--accent); background: var(--soft); }
+.hero { background: linear-gradient(120deg, #064b71, #086674 70%, #087678); }
+.hero::after { content: none; }
+.hero > .shell { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .9fr); gap: 28px; align-items: center; }
+.hero-inner { padding: 52px 0 58px; }
+.hero .eyebrow { color: #f4e2b5; opacity: 1; font-size: .8rem; letter-spacing: .09em; }
+.hero h1 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2.8rem, 5.5vw, 5rem); font-weight: 400; line-height: 1.04; letter-spacing: -.045em; }
+.hero h1 span { color: #ffe7b0; }
+.hero .intro { color: #f0f8f7; font-size: 1.08rem; line-height: 1.7; max-width: 630px; margin-top: 22px; }
+.hero-tags { gap: 8px; }
+.hero-tags span { font-size: .87rem; color: #fffdf5; background: #064d65; border-color: #9dd8d4; padding: 7px 11px; }
+.hero-tags .draft { background: #ffe4a3; color: #493811; border-color: #ffe4a3; font-weight: 700; }
+.hero-art { width: 100%; max-width: 440px; justify-self: end; }
+.hero-art svg { width: 100%; height: auto; display: block; }
+.stats { gap: 22px; padding: 28px 0; }
+.stat small { color: var(--muted); font-size: .8rem; letter-spacing: .035em; }
+.stat strong { font-size: 1.6rem; line-height: 1.3; margin: 6px 0; }
+.stat span { color: var(--muted); font-size: .96rem; line-height: 1.55; }
+.status-note, .section-head p, .map-caption, .route-strip, .fine,
+.card p, .activity p, .budget-summary p, .budget-summary small,
+.check-list small, .sources, .footer { font-size: 1rem; line-height: 1.7; }
+.status-note { padding-top: 20px; }
+.section { padding-top: 52px; }
+.section-head { align-items: flex-start; gap: 25px; }
+.section-head p { max-width: 480px; }
+.kicker { font-size: .81rem; letter-spacing: .065em; }
+.route-strip { gap: 7px 13px; }
+.map-frame, .panel, .card { border-color: var(--line); box-shadow: 0 3px 0 light-dark(#d9e8e366, #00000018); }
+.map-caption { margin-top: 16px; }
+table { font-size: 1rem; line-height: 1.7; }
+th { font-size: .85rem; letter-spacing: .035em; color: var(--ink); }
+td { padding: 20px; }
+td strong { line-height: 1.5; margin-bottom: 6px; }
+td small { font-size: .95rem; line-height: 1.65; margin-top: 9px; }
+.day-cell { width: 120px; }
+.day-cell strong { color: var(--accent); }
+.sleep-cell, .sleep-cell small { font-size: .94rem; }
+.note { font-size: 1rem; line-height: 1.7; padding: 18px 20px; }
+.budget-table td { padding: 15px 18px; }
+.budget-summary { background: #075675; }
+.budget-summary .per { color: #ffe4a3; font-size: 1.45rem; }
+.budget-summary p, .budget-summary small { color: #f4fbfa; }
+.budget-summary .eyebrow { color: #ffe4a3; opacity: 1; }
+.card { padding: 26px; }
+.card .place { font-size: .83rem; letter-spacing: .065em; }
+.card h3 { font-size: 1.25rem; }
+.card .candidate { font-size: 1.05rem; line-height: 1.55; }
+.badge { font-size: .9rem; padding: 5px 11px; }
+.activity { grid-template-columns: 38px minmax(0, 1fr); gap: 14px; }
+.activity h3 { font-size: 1.14rem; line-height: 1.4; }
+.activity-num { font-size: .95rem; }
+.check-list li { font-size: 1.04rem; padding: 22px; grid-template-columns: 28px minmax(0,1fr) auto; }
+.check-list li::before { font-size: .9rem; line-height: 1.9; }
+.check-list strong { line-height: 1.55; margin-bottom: 7px; }
+.check-list small { margin-top: 0; }
+.pending { font-size: .9rem; line-height: 1.5; white-space: normal; max-width: 180px; padding: 5px 10px; font-weight: 600; }
+.booking-group h3 { font-size: 1.28rem; padding: 15px 18px; border-radius: 10px; background: var(--soft); color: var(--accent); border-inline-start: 5px solid var(--accent); }
+.booking-group > .fine { margin: 12px 2px 18px; }
+.booking-now h3, .booking-now .pending { color: var(--urgent); background: var(--urgent-soft); border-color: var(--urgent); }
+.booking-arrival h3, .booking-arrival .pending { color: var(--arrival); background: var(--arrival-soft); border-color: var(--arrival); }
+.booking-before .pending { background: var(--soft); color: var(--accent); }
+.sources { margin-top: 44px; padding-top: 24px; }
+.sources summary { min-height: 44px; }
+.source-links { gap: 12px 20px; }
+.source-links a { display: inline-block; padding: 5px 0; }
+.footer { padding-bottom: 30px; }
+.footer a { padding: 8px 0; }
+@media (max-width: 900px) {
+  .hero > .shell { grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 14px; }
+  .hero h1 { font-size: clamp(2.6rem, 6vw, 4.3rem); }
+}
+@media (max-width: 760px) {
+  .shell { padding-inline: 20px; }
+  .top-inner { gap: 8px; padding-block: 12px; }
+  .top nav { display: flex; flex-wrap: wrap; gap: 3px 5px; overflow: visible; }
+  .top nav a { padding: 7px 9px; min-height: 44px; font-size: .94rem; }
+  .hero > .shell { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .hero-inner { padding: 34px 0 12px; }
+  .hero h1 { font-size: clamp(2.7rem, 11.5vw, 4rem); }
+  .hero .eyebrow { font-size: .77rem; line-height: 1.6; }
+  .hero .intro { font-size: 1.03rem; margin-block: 20px; }
+  .hero-tags span { font-size: .84rem; padding: 6px 10px; }
+  .hero-art { max-width: 380px; height: 155px; overflow: hidden; justify-self: center; margin-bottom: 12px; }
+  .hero-art svg { height: 235px; margin-top: -55px; }
+  .stats { grid-template-columns: minmax(0, 1fr); gap: 16px; padding: 24px 0; }
+  .stat { display: grid; grid-template-columns: 105px minmax(0,1fr); column-gap: 14px; align-items: baseline; }
+  .stat small { grid-row: 1 / 3; font-size: .82rem; line-height: 1.5; }
+  .stat strong { font-size: 1.38rem; margin: 0 0 3px; }
+  .stat span { grid-column: 2; font-size: .96rem; }
+  .section { padding-top: 40px; }
+  .section-head p { font-size: 1rem; }
+  .itinerary-table tr { padding: 20px 18px; grid-template-columns: minmax(0,1fr); }
+  .itinerary-table td { grid-column: 1; }
+  .itinerary-table td.day-cell { grid-column: 1; grid-row: auto; width: auto; padding: 0; font-size: 1rem; margin-bottom: 8px; }
+  .itinerary-table td.sleep-cell { grid-column: 1; margin-top: 14px; }
+  .sleep-cell small { font-size: .94rem; }
+  .budget-table td { padding: 16px 14px; }
+  .budget-table th { padding: 14px; }
+  .budget-summary { padding: 24px; }
+  .card { padding: 23px; }
+  .check-list li { grid-template-columns: 22px minmax(0,1fr); padding: 20px 16px; gap: 10px; }
+  .check-list .pending { grid-column: 2; justify-self: start; margin-top: 4px; }
+  .map-caption, .route-strip { font-size: .96rem; }
+  .booking-group h3 { font-size: 1.25rem; }
+}
+@media (prefers-reduced-motion: reduce) { :root { scroll-behavior: auto; } }
 </style>
 
 <meta name="description" content="The shared Andaman trip plan for five friends, 11–18 December 2026. Interactive routes, itinerary, budget, hotel shortlist and booking status.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Andaman 2026 · Our trip plan">
 <meta property="og:description" content="11–18 December · 5 friends · Port Blair, Havelock, Neil and Baratang. Route map, itinerary, ₹58k/person working budget and booking status.">
-<meta name="theme-color" content="#153e44">
+<meta name="theme-color" content="#075675">
 </head>
 <body>
 
 <a class="skip" href="#itinerary">Skip to itinerary</a>
 <header class="top" id="top"><div class="shell top-inner"><a class="brand" href="#top">Andaman<span> / 2026</span></a><nav aria-label="Trip sections"><a href="#map">Route map</a><a href="#itinerary">Day by day</a><a href="#budget">Budget</a><a href="#stays">Stays</a><a href="#bookings">To book</a></nav></div></header>
-<section class="hero" aria-labelledby="trip-title"><div class="shell"><div class="hero-inner"><div class="eyebrow">11–18 December 2026 · Five friends · Seven nights</div><h1 id="trip-title">A week in<span>the Andamans.</span></h1><p class="intro">Reefs, mangroves and quiet beaches. A practical route through Port Blair, Havelock and Neil, with time for the limestone caves and the islands’ history.</p><div class="hero-tags"><span class="draft">Planning draft</span><span>Updated 20 Oct 2026</span><span>2 rooms · 2 + 3 adults</span></div></div></div></section>
+<section class="hero" aria-labelledby="trip-title"><div class="shell"><div class="hero-inner"><div class="eyebrow">11–18 December 2026 · Five friends · Seven nights</div><h1 id="trip-title">A week in<span>the Andamans.</span></h1><p class="intro">Reefs, mangroves and quiet beaches. A practical route through Port Blair, Havelock and Neil, with time for the limestone caves and the islands’ history.</p><div class="hero-tags"><span class="draft">Planning draft</span><span>Updated 20 Oct 2026</span><span>2 rooms · 2 + 3 adults</span></div></div><div class="hero-art" aria-hidden="true"><svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="lagoon" x1="45" y1="90" x2="430" y2="330" gradientUnits="userSpaceOnUse"><stop stop-color="#6ED8CB"/><stop offset="1" stop-color="#1C9DA8"/></linearGradient><linearGradient id="canopy" x1="170" y1="110" x2="300" y2="250" gradientUnits="userSpaceOnUse"><stop stop-color="#245D49"/><stop offset="1" stop-color="#113F3D"/></linearGradient></defs>
+<circle cx="391" cy="63" r="25" fill="#FFDE98"/>
+<path d="M42 264C-10 223 33 125 119 93C218 56 356 79 423 147C496 220 428 304 321 324C212 345 99 310 42 264Z" fill="url(#lagoon)"/>
+<path d="M60 255C90 271 123 279 150 278M324 303C355 300 384 289 402 273M75 138C96 118 124 109 146 108M350 116C370 121 387 132 399 145" stroke="#C8F1DF" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+<path d="M106 215C118 159 177 119 236 123C300 127 354 173 363 221C374 270 322 298 257 297C195 297 95 267 106 215Z" fill="#FBE7B7"/>
+<path d="M113 210C131 156 184 132 237 135C287 137 338 177 344 214C351 252 308 272 255 271C198 271 104 248 113 210Z" fill="url(#canopy)"/>
+<path d="M120 212C140 169 190 147 227 149C274 150 314 177 328 208C300 196 282 213 263 223C236 205 214 221 192 229C171 212 145 220 120 212Z" fill="#3E8060"/>
+<path d="M140 242C175 260 214 271 253 275" stroke="#FFF9E8" stroke-width="5" stroke-linecap="round"/>
+<path d="M285 245C291 215 298 187 308 167" stroke="#E5C087" stroke-width="6" stroke-linecap="round"/>
+<path d="M308 167C288 140 268 148 256 166C278 162 292 165 308 167ZM308 167C288 165 272 175 270 195C285 181 297 173 308 167ZM308 167C314 141 339 135 356 145C338 148 324 155 308 167ZM308 167C329 157 350 166 360 185C338 175 324 171 308 167ZM308 167C308 143 295 129 278 129C288 144 300 153 308 167Z" fill="#143F35"/>
+<path d="M88 298C94 289 104 286 112 292C114 301 106 307 97 309Z" fill="#F4CE83"/>
+<path d="M87 298L114 289" stroke="#745538" stroke-width="2" stroke-linecap="round"/>
+<path d="M365 239C377 238 389 240 400 243" stroke="#E4FFF2" stroke-width="3" stroke-linecap="round"/>
+<path d="M186 93C192 86 198 86 204 93M204 93C210 86 216 86 222 93" stroke="#F2F7DD" stroke-width="2" stroke-linecap="round"/>
+</svg></div></div></section>
 <main class="shell">
 <div class="stats" aria-label="Trip summary"><div class="stat"><small>Total plan</small><strong>₹58,000 / person</strong><span>Includes booked flights</span></div><div class="stat"><small>Island nights</small><strong>3 + 3 + 1</strong><span>Port Blair · Havelock · Neil</span></div><div class="stat"><small>Already booked</small><strong>Flights only</strong><span>All other bookings pending</span></div></div>
 <p class="status-note"><strong>Times and prices are planning estimates.</strong> Flight timings, December ferry schedules, hotel availability and all activity slots still need confirmation.</p>
@@ -1517,7 +1670,29 @@ svg.lucide {
 }
 
 html&gt;body{padding:0}&lt;/style&gt;
-&lt;/head&gt;
+&lt;style&gt;:root {
+  --background: light-dark(#fffdf8, #102f3e) !important;
+  --foreground: light-dark(#153446, #f7f5ed) !important;
+  --muted-foreground: light-dark(#3d5361, #d0e0e4) !important;
+  --border: light-dark(#bfd1d4, #577481) !important;
+  --primary: light-dark(#006d76, #91e5d5) !important;
+  --primary-foreground: light-dark(#ffffff, #102f3e) !important;
+  --viz-series-1: light-dark(#006d76, #91e5d5) !important;
+  --viz-series-2: light-dark(#215ba0, #a8cfff) !important;
+  --viz-series-3: light-dark(#a64424, #ffc299) !important;
+  --font-size-base: 17px !important;
+}
+body { line-height: 1.65; }
+#andaman-trip-map .text-small { font-size: 15px; line-height: 1.65; }
+#andaman-trip-map .map-legs small { font-size: 15px; line-height: 1.65; }
+#andaman-trip-map .map-legs td { padding-block: 14px; }
+#andaman-trip-map .map-stage { background: light-dark(#dff1ef, #123f4b); border-radius: 12px; }
+#andaman-trip-map .map-land { fill: light-dark(#fbf8ec, #28504e); stroke: light-dark(#7d9e9e, #87b4ae); }
+#andaman-trip-map .map-road { stroke: light-dark(#647d80, #b0ccce); stroke-opacity: .5; }
+#andaman-trip-map .map-header { margin-bottom: 14px; }
+#andaman-trip-map h2 { padding-inline-end: 0; }
+#andaman-trip-map details summary { min-height: 44px; }
+&lt;/style&gt;&lt;/head&gt;
 &lt;body&gt;
 &lt;script type=&quot;application/json&quot; id=&quot;codex-visualization-widget-state&quot;&gt;__CODEX_VISUALIZATION_WIDGET_STATE__&lt;/script&gt;
 &lt;script&gt;(() =&gt; {
@@ -2906,18 +3081,18 @@ html&gt;body{padding:0}&lt;/style&gt;
 <article class="activity"><div class="activity-num">04</div><div><h3>Baratang mangroves + caves</h3><p><span class="price">₹15,000 group allowance</span> · One SUV for five, convoy logistics, vehicle ferry, creek boat and cave access. Ask for every inclusion; this is a full early-start day.</p></div></article>
 </div><p class="fine">Seahawks is a researched activity candidate, not a confirmed provider. <a href="https://seahawksscuba.in/try-scuba-diving/" target="_blank" rel="noopener noreferrer">Dive menu ↗</a> · <a href="https://seahawksscuba.in/snorkelling-kayaking/" target="_blank" rel="noopener noreferrer">Snorkel / kayak menu ↗</a>. Prices are published references and planning allowances; verify final group quotes and weather policies.</p></section>
 <section class="section" id="bookings" aria-labelledby="bookings-heading"><div class="section-head"><div><div class="kicker">Booking timeline · all ground arrangements unbooked</div><h2 id="bookings-heading">What to book, and when.</h2></div><p>Only the flights have been paid for. Dates below are our planning targets, not operator cutoffs; availability may require booking earlier.</p></div>
-<div class="booking-group"><h3>Book now</h3><p class="fine">Today · 20 October 2026</p><div class="panel"><ol class="check-list">
+<div class="booking-group booking-now"><h3>Book now</h3><p class="fine">Today · 20 October 2026</p><div class="panel"><ol class="check-list">
 <li><div><strong>Verify both booked IndiGo itineraries</strong><small>Confirm travel dates, flight numbers, Port Blair arrival, return departure and Chennai connections. Keep tickets and booking references private.</small></div><span class="pending">Verify today</span></li>
 <li><div><strong>Get complete hotel quotes for 2 + 3 adults</strong><small>Price all seven nights with breakfast for five, adult extra bed, taxes, peak supplements and cancellation terms. Reserve today if the rooms are refundable, suitable and within the ₹50,000 group target.</small></div><span class="pending">Not booked</span></li>
 <li><div><strong>Check December inventory for all three ferries</strong><small>13 Dec Port Blair → Havelock; 16 Dec Havelock → Neil; 17 Dec Neil → Port Blair. Book now if released. Otherwise book when inventory opens, with 1 Nov as our internal target, subject to release.</small></div><span class="pending">Not booked</span></li>
 </ol></div></div>
-<div class="booking-group" style="margin-top:28px"><h3>Book before travel</h3><p class="fine">Lock the important reservations before arriving on the islands.</p><div class="panel"><ol class="check-list">
+<div class="booking-group booking-before" style="margin-top:28px"><h3>Book before travel</h3><p class="fine">Lock the important reservations before arriving on the islands.</p><div class="panel"><ol class="check-list">
 <li><div><strong>By 1 Nov · lock hotels and ferries</strong><small>Our target, subject to ferry inventory release. Match the 11–13 Dec Port Blair, 13–16 Dec Havelock, 16–17 Dec Neil and 17–18 Dec Port Blair room nights to the booked sailings.</small></div><span class="pending">Planning target</span></li>
 <li><div><strong>By 10 Nov · confirm all water activities</strong><small>Five beginner boat dives on 14 Dec; 03:30–05:00 kayak and a later guided boat snorkel on 15 Dec. Confirm all five can join the same group, named-hotel pickup, water time, weather policy and alternate slots.</small></div><span class="pending">Not booked</span></li>
 <li><div><strong>By 20 Nov · reserve Baratang and airport pickup</strong><small>12 Dec SUV for five, early pickup, first-convoy arrangements, vehicle ferry, creek boat and cave charges in one written quote. Prebook the 11 Dec airport pickup after flight timing is verified.</small></div><span class="pending">Not booked</span></li>
 <li><div><strong>Check from 4 Dec · Cellular Jail show</strong><small>The <a href="https://tourism.andamannicobar.gov.in/etourist/available-seats" target="_blank" rel="noopener noreferrer">official portal ↗</a> displays “Next 7 Days”. Start checking on 4 Dec and book once 11 Dec actually appears. This is our check date, not a guaranteed opening date; the release hour is unverified. Choose the show after confirming the arrival flight.</small></div><span class="pending">Not booked</span></li>
 </ol></div></div>
-<div class="booking-group" style="margin-top:28px"><h3>Decide on arrival</h3><p class="fine">Keep these flexible, according to the weather, tide and everyone’s energy.</p><div class="panel"><ol class="check-list">
+<div class="booking-group booking-arrival" style="margin-top:28px"><h3>Decide on arrival</h3><p class="fine">Keep these flexible, according to the weather, tide and everyone’s energy.</p><div class="panel"><ol class="check-list">
 <li><div><strong>Extra local cabs and meal places</strong><small>Arrange additional point-to-point rides and choose restaurants locally. The arrival airport pickup, Baratang and major transfers should already be arranged.</small></div><span class="pending">Flexible</span></li>
 <li><div><strong>11 Dec · arrange daytime Cellular Jail entry</strong><small>Daytime entry is separate from the light-and-sound show. Arrange entry on arrival if the flight leaves enough time; verify the day’s entry hours. <a href="https://tourism.andamannicobar.gov.in/etourist/show-details" target="_blank" rel="noopener noreferrer">Official details ↗</a>.</small></div><span class="pending">On arrival</span></li>
 <li><div><strong>Free beach visits and Natural Bridge guide</strong><small>Adjust the order of beaches on the day. Check daylight low tide before visiting Natural Bridge; decide locally whether to hire an optional guide.</small></div><span class="pending">Tide / weather</span></li>
