@@ -223,17 +223,23 @@ body {
 .theme-picker { background: var(--soft); border-color: var(--line); }
 .theme-picker button { border-radius: 9px; }
 
-/* The hero is a window into the same photograph, rather than a second picture. */
+/* Keep the banner within the card grid, with the continuous coast around it. */
 .hero {
   position: relative;
-  background: linear-gradient(90deg, #032b3be8 0%, #032b3bd4 36%, #032b3b75 67%, #032b3b0a 100%);
+  width: calc(100% - 56px);
+  max-width: 1124px;
+  margin: 24px auto 0;
+  border: 1px solid #c9e5df42;
+  border-radius: 26px;
+  background: linear-gradient(105deg, #032b3be8 0%, #032b3bd4 44%, #032b3b80 100%);
+  box-shadow: var(--surface-shadow);
   color: #fffdf6;
-  overflow: hidden;
+  overflow: clip;
 }
 .hero::after { content: none; }
-.hero > .shell { display: block; }
+.hero > .shell { display: block; padding-inline: 38px; }
 .hero-art { display: none; }
-.hero-inner { max-width: 790px; padding: 76px 0 80px; }
+.hero-inner { max-width: 760px; padding: 48px 0 50px; }
 .hero h1 { color: #fffdf5; text-shadow: 0 3px 23px #001e2c40; }
 .hero h1 span { color: #ffedbd; }
 .hero .eyebrow { color: #f3e9c9; }
@@ -242,7 +248,7 @@ body {
 .hero-tags .draft { background: #ffe7ad; color: #4e3a19; border-color: transparent; }
 
 main.shell { position: relative; padding-bottom: 12px; }
-.stats { position: relative; z-index: 1; padding: 0; margin: -25px 0 0; gap: 18px; border: 0; }
+.stats { position: relative; z-index: 1; padding: 0; margin: 20px 0 0; gap: 18px; border: 0; }
 .stat,
 .section-head,
 .panel,
@@ -363,7 +369,7 @@ main > .section > .fine,
 
 @media (max-width: 900px) {
   .top-inner { min-height: auto; }
-  .hero-inner { padding: 58px 0 68px; }
+  .hero-inner { padding: 40px 0 42px; }
   .section-head { align-items: flex-start; }
 }
 @media (max-width: 760px) {
@@ -374,12 +380,18 @@ main > .section > .fine,
   .theme-picker button { padding-inline: 9px; font-size: .86rem; }
   .top nav { gap: 3px 4px; flex-wrap: wrap; overflow: visible; }
   .top nav a { padding-inline: 8px; font-size: .91rem; }
-  .hero { background: linear-gradient(90deg, #032b3bea, #032b3bbd 70%, #032b3b94); }
-  .hero-inner { padding: 39px 0 54px; }
-  .hero h1 { font-size: clamp(2.65rem, 12vw, 4.1rem); }
+  .hero {
+    width: calc(100% - 32px);
+    margin-top: 16px;
+    border-radius: 21px;
+    background: linear-gradient(110deg, #032b3be6, #032b3bb8);
+  }
+  .hero > .shell { padding-inline: 22px; }
+  .hero-inner { padding: 30px 0 32px; }
+  .hero h1 { font-size: clamp(2rem, 10.2vw, 4.1rem); }
   .hero .intro { font-size: 1.03rem; }
   .hero-tags span { font-size: .82rem; padding: 6px 10px; }
-  .stats { margin-top: -21px; gap: 13px; }
+  .stats { margin-top: 18px; gap: 13px; }
   .stat { padding: 20px; grid-template-columns: 94px minmax(0, 1fr); column-gap: 12px; }
   .stat small { font-size: .78rem; }
   .stat strong { font-size: 1.32rem; }
