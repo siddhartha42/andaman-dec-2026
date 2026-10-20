@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src 'self' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <title>Andaman 2026 · The trip plan</title>
 <style>
 :root{color-scheme:light dark;--page:light-dark(#f5f7f4,#101e21);--paper:light-dark(#fff,#17282c);--ink:light-dark(#142f35,#edf5f3);--muted:light-dark(#496168,#b1c4c7);--line:light-dark(#d8e3df,#33494e);--accent:light-dark(#075f64,#83d9cf);--soft:light-dark(#e4f1ed,#203c3e);--gold:light-dark(#805a18,#f1d193);--gold-soft:light-dark(#fff4dd,#3b3223);--hero:light-dark(#153e44,#173e44);--hero-ink:#eff9f5;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--page);color:var(--ink);scroll-behavior:smooth}
@@ -163,6 +163,263 @@ td small { font-size: .95rem; line-height: 1.65; margin-top: 9px; }
   .theme-picker button { padding-inline: 10px; }
   .top nav { grid-column: 1 / -1; grid-row: 2; margin-inline-start: 0; width: 100%; flex-wrap: wrap; }
 }
+/* Final visual layer: a continuous Andaman coast behind readable floating surfaces.
+   Append after andaman-coastal.css. The photograph is a same-site static asset. */
+:root {
+  --page: light-dark(#d7e8df, #082732);
+  --paper: light-dark(#fffdf7, #102e3a);
+  --ink: light-dark(#173746, #f5f7f2);
+  --muted: light-dark(#435d68, #c4d6dc);
+  --line: light-dark(#476d7333, #b4d4d82b);
+  --accent: light-dark(#006d70, #9be5d5);
+  --soft: light-dark(#e3f1ec, #1c424b);
+  --photo-wash: light-dark(#f4f5e91f, #0216207d);
+  --surface: light-dark(#fffdf8fa, #102d39fa);
+  --surface-quiet: light-dark(#f8fbf4f5, #102d39f5);
+  --surface-shadow-color: light-dark(#103f4421, #0012195c);
+  --surface-lift-shadow-color: light-dark(#103f4433, #000e186e);
+  --surface-shadow: 0 9px 32px var(--surface-shadow-color);
+  --surface-lift-shadow: 0 16px 38px var(--surface-lift-shadow-color);
+  --surface-radius: 22px;
+  background: var(--page);
+}
+
+html { min-height: 100%; }
+body {
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+  background: transparent;
+  color: var(--ink);
+}
+.island-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--page);
+  background-image: linear-gradient(var(--photo-wash), var(--photo-wash)), url('./assets/andaman-coast.webp');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.island-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #052c3b26, transparent 38%, light-dark(#eaf0df1f, #00192326));
+}
+
+/* Navigation stays legible while the coast remains visible around the page. */
+.top {
+  position: relative;
+  z-index: 2;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 3px 24px #062b3a14;
+}
+.top-inner { min-height: 80px; }
+.top nav a { border-radius: 12px; }
+.theme-picker { background: var(--soft); border-color: var(--line); }
+.theme-picker button { border-radius: 9px; }
+
+/* The hero is a window into the same photograph, rather than a second picture. */
+.hero {
+  position: relative;
+  background: linear-gradient(90deg, #032b3be8 0%, #032b3bd4 36%, #032b3b75 67%, #032b3b0a 100%);
+  color: #fffdf6;
+  overflow: hidden;
+}
+.hero::after { content: none; }
+.hero > .shell { display: block; }
+.hero-art { display: none; }
+.hero-inner { max-width: 790px; padding: 76px 0 80px; }
+.hero h1 { color: #fffdf5; text-shadow: 0 3px 23px #001e2c40; }
+.hero h1 span { color: #ffedbd; }
+.hero .eyebrow { color: #f3e9c9; }
+.hero .intro { color: #f2f8f3; max-width: 630px; text-shadow: 0 1px 7px #001d293b; }
+.hero-tags span { background: #073d4bd9; border: 1px solid #d9eee878; color: #fffdf5; }
+.hero-tags .draft { background: #ffe7ad; color: #4e3a19; border-color: transparent; }
+
+main.shell { position: relative; padding-bottom: 12px; }
+.stats { position: relative; z-index: 1; padding: 0; margin: -25px 0 0; gap: 18px; border: 0; }
+.stat,
+.section-head,
+.panel,
+.map-frame,
+.card,
+.activity,
+.booking-group,
+.sources {
+  min-width: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--surface-radius);
+  box-shadow: var(--surface-shadow);
+}
+.stat { padding: 24px; }
+.stat strong { color: var(--ink); }
+.stat small, .stat span { color: var(--muted); }
+.section { padding-top: 48px; }
+.section-head { padding: 28px; margin-bottom: 18px; align-items: center; }
+.section-head h2 { color: var(--ink); }
+.section-head p { color: var(--muted); }
+.kicker { color: var(--accent); }
+.map-section { margin-top: 0; }
+.map-frame { padding: 12px; overflow: hidden; }
+.map-frame iframe { background: var(--paper); border-radius: 12px; }
+.panel { overflow: hidden; }
+.table-scroll { overflow-x: auto; }
+.itinerary-table, .budget-table { background: transparent; }
+th { background: var(--soft); color: var(--ink); }
+td { border-top-color: var(--line); }
+td small, .sleep-cell { color: var(--muted); }
+.budget-table .sum td { background: var(--soft); }
+
+/* Small, separate text gets a quiet backing rather than lying on the photograph. */
+.status-note,
+.map-caption,
+.route-strip,
+main > .section > .fine,
+.note {
+  background: var(--surface-quiet);
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 17px 21px;
+  box-shadow: 0 5px 20px #062c3614;
+}
+.status-note { margin-top: 18px; margin-bottom: 0; }
+.status-note strong { color: var(--ink); }
+.route-strip { margin-bottom: 18px; }
+.route-strip b { color: var(--ink); }
+.map-caption { margin-top: 16px; }
+.note { margin-top: 18px; background: light-dark(#fff4dcfa, #3b3324fa); color: var(--gold); }
+.fine { color: var(--muted); }
+
+.budget-grid { gap: 22px; }
+.budget-summary {
+  min-width: 0;
+  background: light-dark(#083e50fa, #0d3544fa);
+  border: 1px solid #c4e4e638;
+  border-radius: var(--surface-radius);
+  box-shadow: var(--surface-shadow);
+  color: #fffdf4;
+}
+.budget-summary .total { color: #fffdf4; }
+.budget-summary .per, .budget-summary .eyebrow { color: #ffe7ad; }
+.budget-summary p, .budget-summary small { color: #edf6f3; }
+.budget-summary hr { border-top-color: #d6ece54a; }
+.cards { gap: 20px; }
+.card { padding: 26px; }
+.card p { color: var(--muted); }
+.card .candidate { color: var(--ink); }
+.card .alt { border-top-color: var(--line); }
+.badge { background: var(--soft); color: var(--accent); }
+.activity-list { gap: 18px; }
+.activity { padding: 25px; grid-template-columns: 38px minmax(0, 1fr); }
+.activity h3, .activity .price { color: var(--ink); }
+.activity p { color: var(--muted); }
+.activity-num { background: var(--soft); color: var(--accent); }
+
+/* One floating surface per booking group; no card-inside-card border stack. */
+.booking-group { padding: 25px 27px 8px; }
+.booking-group h3 { background: transparent; border: 0; border-radius: 0; padding: 0; }
+.booking-group > .fine { background: transparent; box-shadow: none; border: 0; padding: 0; margin: 10px 0 6px; }
+.booking-group .panel { background: transparent; border: 0; border-radius: 0; box-shadow: none; }
+.booking-group .check-list li { padding: 22px 0; border-top-color: var(--line); }
+.booking-group .check-list strong { color: var(--ink); }
+.booking-group .check-list small { color: var(--muted); }
+.sources { padding: 24px 27px; margin-top: 40px; color: var(--muted); }
+.sources summary { min-height: 44px; color: var(--ink); }
+.sources > p { color: var(--muted); }
+.footer { background: transparent; border: 0; padding: 18px 0 38px; }
+.footer .shell {
+  width: calc(100% - 56px);
+  max-width: 1124px;
+  padding: 20px 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--surface-shadow);
+  color: var(--muted);
+}
+
+/* Feedback is local to cards, with no autoplay, page movement or pointer cursors. */
+.floating-card {
+  transform-origin: center;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .floating-card:hover { transform: translateY(-3px); box-shadow: var(--surface-lift-shadow); }
+  .booking-group .panel:hover { box-shadow: none; }
+}
+.floating-card:active,
+.floating-card.is-touch-pressed {
+  transform: translateY(1px) scale(.988);
+  box-shadow: var(--surface-shadow);
+}
+.booking-group .panel.floating-card { transform: none; transition: none; }
+
+@media (max-width: 900px) {
+  .top-inner { min-height: auto; }
+  .hero-inner { padding: 58px 0 68px; }
+  .section-head { align-items: flex-start; }
+}
+@media (max-width: 760px) {
+  .shell { padding-inline: 16px; }
+  .island-backdrop { background-position: 58% center; }
+  .top-inner { grid-template-columns: minmax(0, 1fr) auto; padding-block: 12px; gap: 9px 5px; }
+  .brand { font-size: 1.05rem; }
+  .theme-picker button { padding-inline: 9px; font-size: .86rem; }
+  .top nav { gap: 3px 4px; flex-wrap: wrap; overflow: visible; }
+  .top nav a { padding-inline: 8px; font-size: .91rem; }
+  .hero { background: linear-gradient(90deg, #032b3bea, #032b3bbd 70%, #032b3b94); }
+  .hero-inner { padding: 39px 0 54px; }
+  .hero h1 { font-size: clamp(2.65rem, 12vw, 4.1rem); }
+  .hero .intro { font-size: 1.03rem; }
+  .hero-tags span { font-size: .82rem; padding: 6px 10px; }
+  .stats { margin-top: -21px; gap: 13px; }
+  .stat { padding: 20px; grid-template-columns: 94px minmax(0, 1fr); column-gap: 12px; }
+  .stat small { font-size: .78rem; }
+  .stat strong { font-size: 1.32rem; }
+  .stat span { font-size: .94rem; }
+  .section { padding-top: 32px; }
+  .section-head { padding: 23px 21px; gap: 14px; border-radius: 21px; }
+  .section-head h2 { font-size: 1.85rem; }
+  .section-head p { font-size: 1rem; }
+  .map-frame { padding: 8px; border-radius: 19px; }
+  .map-frame iframe { border-radius: 10px; }
+  .status-note, .map-caption, .route-strip, main > .section > .fine { padding: 16px 18px; border-radius: 17px; }
+  .route-strip { gap: 6px 10px; }
+  .panel, .card, .activity, .booking-group, .budget-summary { border-radius: 21px; }
+  .cards, .activity-list { gap: 16px; }
+  .card, .activity { padding: 23px 21px; }
+  .activity { grid-template-columns: 33px minmax(0, 1fr); gap: 12px; }
+  .activity-num { width: 32px; height: 32px; }
+  .booking-group { padding: 23px 20px 5px; }
+  .booking-group .check-list li { padding: 20px 0; }
+  .booking-group .panel { border-radius: 0; }
+  .sources { padding: 22px 20px; margin-top: 30px; }
+  .footer .shell { width: calc(100% - 32px); padding: 18px 20px; }
+}
+@media (max-width: 360px) {
+  .brand { font-size: 1rem; }
+  .theme-picker button { padding-inline: 8px; font-size: .82rem; }
+  .top nav a { font-size: .89rem; padding-inline: 7px; }
+  .stat { grid-template-columns: 86px minmax(0, 1fr); padding: 18px; }
+  .section-head { padding: 21px 19px; }
+  .activity { grid-template-columns: minmax(0, 1fr); }
+  .activity-num { margin-bottom: 1px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  :root { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .floating-card,
+  .floating-card:hover,
+  .floating-card:active,
+  .floating-card.is-touch-pressed { transform: none !important; }
+}
 </style>
 
 <meta name="description" content="The shared Andaman trip plan for five friends, 11–18 December 2026. Interactive routes, itinerary, budget, hotel shortlist and booking status.">
@@ -170,7 +427,7 @@ td small { font-size: .95rem; line-height: 1.65; margin-top: 9px; }
 <meta property="og:title" content="Andaman 2026 · Our trip plan">
 <meta property="og:description" content="11–18 December · 5 friends · Port Blair, Havelock, Neil and Baratang. Route map, itinerary, ₹58k/person working budget and booking status.">
 <meta name="theme-color" content="#075675">
-<script>(() => {
+<link rel="preload" as="image" href="./assets/andaman-coast.webp"><script>(() => {
   let theme;
   try { theme = localStorage.getItem('andaman-dec-2026:theme'); } catch {}
   if (theme !== 'light' && theme !== 'dark') {
@@ -181,25 +438,10 @@ td small { font-size: .95rem; line-height: 1.65; margin-top: 9px; }
 })();
 </script></head>
 <body>
-
+<div class="island-backdrop" aria-hidden="true"></div>
 <a class="skip" href="#itinerary">Skip to itinerary</a>
 <header class="top" id="top"><div class="shell top-inner"><a class="brand" href="#top">Andaman<span> / 2026</span></a><nav aria-label="Trip sections"><a href="#map">Route map</a><a href="#itinerary">Day by day</a><a href="#budget">Budget</a><a href="#stays">Stays</a><a href="#bookings">To book</a></nav><div class="theme-picker" role="group" aria-label="Page appearance"><button type="button" data-theme-choice="light" aria-pressed="false">Light</button><button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button></div></div></header>
-<section class="hero" aria-labelledby="trip-title"><div class="shell"><div class="hero-inner"><div class="eyebrow">11–18 December 2026 · Five friends · Seven nights</div><h1 id="trip-title">A week in<span>the Andamans.</span></h1><p class="intro">Reefs, mangroves and quiet beaches. A practical route through Port Blair, Havelock and Neil, with time for the limestone caves and the islands’ history.</p><div class="hero-tags"><span class="draft">Planning draft</span><span>Updated 20 Oct 2026</span><span>2 rooms · 2 + 3 adults</span></div></div><div class="hero-art" aria-hidden="true"><svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg">
-<defs><linearGradient id="lagoon" x1="45" y1="90" x2="430" y2="330" gradientUnits="userSpaceOnUse"><stop stop-color="#6ED8CB"/><stop offset="1" stop-color="#1C9DA8"/></linearGradient><linearGradient id="canopy" x1="170" y1="110" x2="300" y2="250" gradientUnits="userSpaceOnUse"><stop stop-color="#245D49"/><stop offset="1" stop-color="#113F3D"/></linearGradient></defs>
-<circle cx="391" cy="63" r="25" fill="#FFDE98"/>
-<path d="M42 264C-10 223 33 125 119 93C218 56 356 79 423 147C496 220 428 304 321 324C212 345 99 310 42 264Z" fill="url(#lagoon)"/>
-<path d="M60 255C90 271 123 279 150 278M324 303C355 300 384 289 402 273M75 138C96 118 124 109 146 108M350 116C370 121 387 132 399 145" stroke="#C8F1DF" stroke-width="3" stroke-linecap="round" opacity=".8"/>
-<path d="M106 215C118 159 177 119 236 123C300 127 354 173 363 221C374 270 322 298 257 297C195 297 95 267 106 215Z" fill="#FBE7B7"/>
-<path d="M113 210C131 156 184 132 237 135C287 137 338 177 344 214C351 252 308 272 255 271C198 271 104 248 113 210Z" fill="url(#canopy)"/>
-<path d="M120 212C140 169 190 147 227 149C274 150 314 177 328 208C300 196 282 213 263 223C236 205 214 221 192 229C171 212 145 220 120 212Z" fill="#3E8060"/>
-<path d="M140 242C175 260 214 271 253 275" stroke="#FFF9E8" stroke-width="5" stroke-linecap="round"/>
-<path d="M285 245C291 215 298 187 308 167" stroke="#E5C087" stroke-width="6" stroke-linecap="round"/>
-<path d="M308 167C288 140 268 148 256 166C278 162 292 165 308 167ZM308 167C288 165 272 175 270 195C285 181 297 173 308 167ZM308 167C314 141 339 135 356 145C338 148 324 155 308 167ZM308 167C329 157 350 166 360 185C338 175 324 171 308 167ZM308 167C308 143 295 129 278 129C288 144 300 153 308 167Z" fill="#143F35"/>
-<path d="M88 298C94 289 104 286 112 292C114 301 106 307 97 309Z" fill="#F4CE83"/>
-<path d="M87 298L114 289" stroke="#745538" stroke-width="2" stroke-linecap="round"/>
-<path d="M365 239C377 238 389 240 400 243" stroke="#E4FFF2" stroke-width="3" stroke-linecap="round"/>
-<path d="M186 93C192 86 198 86 204 93M204 93C210 86 216 86 222 93" stroke="#F2F7DD" stroke-width="2" stroke-linecap="round"/>
-</svg></div></div></section>
+<section class="hero" aria-labelledby="trip-title"><div class="shell"><div class="hero-inner"><div class="eyebrow">11–18 December 2026 · Five friends · Seven nights</div><h1 id="trip-title">A week in<span>the Andamans.</span></h1><p class="intro">Reefs, mangroves and quiet beaches. A practical route through Port Blair, Havelock and Neil, with time for the limestone caves and the islands’ history.</p><div class="hero-tags"><span class="draft">Planning draft</span><span>Updated 20 Oct 2026</span><span>2 rooms · 2 + 3 adults</span></div></div></div></section>
 <main class="shell">
 <div class="stats" aria-label="Trip summary"><div class="stat"><small>Total plan</small><strong>₹58,000 / person</strong><span>Includes booked flights</span></div><div class="stat"><small>Island nights</small><strong>3 + 3 + 1</strong><span>Port Blair · Havelock · Neil</span></div><div class="stat"><small>Already booked</small><strong>Flights only</strong><span>All other bookings pending</span></div></div>
 <p class="status-note"><strong>Times and prices are planning estimates.</strong> Flight timings, December ferry schedules, hotel availability and all activity slots still need confirmation.</p>
@@ -3131,7 +3373,7 @@ body { line-height: 1.65; }
 <li><div><strong>Souvenir shopping</strong><small>Choose what to buy at Sagarika or Aberdeen Bazaar, with the group’s ₹5,000 shopping allowance in mind.</small></div><span class="pending">Flexible</span></li>
 <li><div><strong>17 Dec · decide on optional Ross Island</strong><small>Decide only after the actual Port Blair ferry arrival and a suitable same-day return boat are confirmed. If the timing is tight, keep the afternoon for shopping or the jail.</small></div><span class="pending">Optional</span></li>
 </ol></div></div><p class="fine">Keep major hotels, inter-island ferries, Baratang and the water activities out of the last-minute list. All ground items above remain unbooked until confirmed reservations are added to the plan.</p></section>
-<details class="sources"><summary>Planning references &amp; status</summary><p style="margin-top:12px">Updated 20 October 2026. Travel times are allowances; published menus and tariffs may change. Hotels, ferries and activities have not been booked or date-quoted. Flight costs are traveller-reported; flight timings are unverified.</p><div class="source-links"><a href="https://www.gonautika.com/" target="_blank" rel="noopener noreferrer">Nautika ferries ↗</a><a href="https://www.makruzz.com/" target="_blank" rel="noopener noreferrer">Makruzz ferries ↗</a><a href="https://seahawksscuba.in/try-scuba-diving/" target="_blank" rel="noopener noreferrer">Scuba menu ↗</a><a href="https://seahawksscuba.in/snorkelling-kayaking/" target="_blank" rel="noopener noreferrer">Snorkelling &amp; kayaking ↗</a><a href="https://www.islandcabservices.com/cabs/" target="_blank" rel="noopener noreferrer">Published cab references ↗</a><a href="https://www.andamantourism.gov.in/" target="_blank" rel="noopener noreferrer">Andaman Tourism ↗</a></div></details>
+<details class="sources"><summary>Planning references &amp; status</summary><p style="margin-top:12px">Andaman-inspired coastal background artwork is illustrative. Updated 20 October 2026. Travel times are allowances; published menus and tariffs may change. Hotels, ferries and activities have not been booked or date-quoted. Flight costs are traveller-reported; flight timings are unverified.</p><div class="source-links"><a href="https://www.gonautika.com/" target="_blank" rel="noopener noreferrer">Nautika ferries ↗</a><a href="https://www.makruzz.com/" target="_blank" rel="noopener noreferrer">Makruzz ferries ↗</a><a href="https://seahawksscuba.in/try-scuba-diving/" target="_blank" rel="noopener noreferrer">Scuba menu ↗</a><a href="https://seahawksscuba.in/snorkelling-kayaking/" target="_blank" rel="noopener noreferrer">Snorkelling &amp; kayaking ↗</a><a href="https://www.islandcabservices.com/cabs/" target="_blank" rel="noopener noreferrer">Published cab references ↗</a><a href="https://www.andamantourism.gov.in/" target="_blank" rel="noopener noreferrer">Andaman Tourism ↗</a></div></details>
 </main><footer class="footer"><div class="shell footer-inner"><span>Andaman 2026 · Shared trip planning draft · All times IST</span><a href="#top">Back to top ↑</a></div></footer>
 <script>(() => {
   const key = 'andaman-dec-2026:theme';
@@ -3164,6 +3406,34 @@ body { line-height: 1.65; }
     if (!preference) apply(system.matches ? 'dark' : 'light');
   });
   apply(preference || (system.matches ? 'dark' : 'light'));
+})();
+(() => {
+  const selectors = '.stat, .section-head, .panel:not(.booking-group .panel), .booking-group, .map-frame, .card, .activity, .budget-summary, .sources';
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+  document.querySelectorAll(selectors).forEach(card => {
+    card.classList.add('floating-card');
+    let press;
+    let timer;
+    const clear = () => { press = null; card.classList.remove('is-touch-pressed'); clearTimeout(timer); };
+    card.addEventListener('pointerdown', event => {
+      if (reduce.matches || !['touch', 'pen'].includes(event.pointerType)) return;
+      press = {id:event.pointerId,x:event.clientX,y:event.clientY,time:performance.now()};
+    }, {passive:true});
+    card.addEventListener('pointermove', event => {
+      if (press && event.pointerId === press.id && Math.hypot(event.clientX-press.x,event.clientY-press.y)>10) clear();
+    }, {passive:true});
+    card.addEventListener('pointerup', event => {
+      const valid = press && event.pointerId === press.id && performance.now()-press.time<=400 && Math.hypot(event.clientX-press.x,event.clientY-press.y)<=10;
+      press = null;
+      if (!valid || reduce.matches) return;
+      card.classList.add('is-touch-pressed');
+      clearTimeout(timer);
+      timer = setTimeout(clear,180);
+    }, {passive:true});
+    card.addEventListener('pointercancel', clear, {passive:true});
+    card.addEventListener('pointerleave', () => { press = null; }, {passive:true});
+    reduce.addEventListener('change', () => { if (reduce.matches) clear(); });
+  });
 })();
 </script></body>
 </html>
