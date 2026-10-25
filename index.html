@@ -3894,7 +3894,7 @@ body { line-height: 1.65; }
     document.querySelectorAll('.desktop-section-content,.stats').forEach(node => { node.inert = mobile.matches; });
     plan.inert = !mobile.matches;
     if (mobile.matches) map.before(itinerary);
-    else document.getElementById('budget').before(itinerary);
+    else (document.getElementById('baratang-diy') || document.getElementById('budget')).before(itinerary);
     root.classList.add('mobile-ready');
   }
   mobile.addEventListener('change',() => { applyLayout(); showDay(selected); sendMapSelection(); });
