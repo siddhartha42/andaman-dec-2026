@@ -799,7 +799,7 @@ main.shell { padding-bottom: 20px; }
 @media (min-width: 761px) {
   :is(#price-check,#transport,#guide-notes) > .desktop-section-content { display: none; }
   :is(#price-check,#transport,#guide-notes) > .section-fold { display: block; background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 0 22px; }
-  :is(#price-check,#transport,#guide-notes) > .section-fold > summary { min-height: 56px; padding-block: 16px; color: var(--accent); font-size: .95rem; font-weight: 600; }
+  :is(#price-check,#transport,#guide-notes) > .section-fold > summary { display: list-item; min-height: 56px; padding-block: 16px; color: var(--accent); font-size: .95rem; font-weight: 600; }
   :is(#price-check,#transport,#guide-notes) .section-fold-body { padding-bottom: 20px; }
 }
 @media (max-width: 760px) {
@@ -936,6 +936,146 @@ main.shell { padding-bottom: 20px; }
   .floating-card, .floating-card:hover, .floating-card:active,
   .floating-card.is-touch-pressed { transform: none!important; transition: none!important; }
 }
+/* Friends' trip planner v2. Modern type, a usable day view, and a little sunshine. */
+:root {
+  --page:light-dark(#f6f8fb,#0e1722); --paper:light-dark(#fff,#182433);
+  --ink:light-dark(#172b3a,#eff6fa); --muted:light-dark(#607282,#aebdcc);
+  --line:light-dark(#e3e9ee,#314151); --accent:light-dark(#047c79,#70ded0);
+  --soft:light-dark(#e9f6f2,#1b3b3e); --gold:light-dark(#815b18,#f8d18e);
+  --gold-soft:light-dark(#fff6df,#3b3324); --hero:light-dark(#123e49,#123e49);
+  --surface:var(--paper); --surface-quiet:light-dark(#f8fafc,#1a2b3b);
+  --surface-shadow:0 8px 30px light-dark(#23445908,#00000018);
+  --surface-lift-shadow:0 14px 38px light-dark(#23445916,#00000035);
+  font-family:'Plus Jakarta Sans',system-ui,sans-serif; background:var(--page);
+}
+body {font-family:'Plus Jakarta Sans',system-ui,sans-serif; font-size:15px; line-height:1.7; background:transparent;}
+button,select {font:inherit;} h1,h2,h3,.brand,.stay-price,.dashboard-card strong {font-family:'Outfit',system-ui,sans-serif!important;}
+h2,h3 {letter-spacing:-.035em;} .shell {max-width:1200px;padding-inline:32px;}
+.island-backdrop {background:radial-gradient(ellipse at 100% 8%,light-dark(#daf4ed,#12353d),transparent 46%),radial-gradient(ellipse at 0 40%,light-dark(#fdf4e4,#28292b),transparent 40%),var(--page);}
+.island-backdrop:after {display:none;}
+.top {background:var(--paper);box-shadow:none;border-bottom:1px solid var(--line);}
+.top-inner {min-height:76px;}.brand {font-size:1.4rem;letter-spacing:-.04em;}
+.top nav {gap:4px;}.top nav a {font-size:.83rem;padding:10px 13px;border-radius:12px;color:var(--muted);}
+.theme-picker {background:var(--surface-quiet);padding:4px;border:1px solid var(--line);border-radius:99px;}
+.theme-picker button {border-radius:99px;min-height:36px;padding:6px 11px;font-size:.73rem;}
+.theme-picker button[aria-pressed=true] {background:var(--ink);color:var(--paper);}
+.hero {width:auto;margin:0;border:0;border-radius:0;background:transparent;color:var(--ink);overflow:hidden;box-shadow:none;}
+.hero:before,.hero:after {display:none;}
+.hero > .shell {position:relative;min-height:410px;padding-block:48px;}
+.hero > .shell:after {content:'';position:absolute;right:44px;top:48px;bottom:42px;width:35%;border-radius:100px 28px 100px 28px;background:url('./assets/andaman-coast.webp') center/cover;transform:rotate(3deg);box-shadow:0 18px 40px #073d4722;outline:7px solid var(--paper);}
+.hero-inner {max-width:59%;margin:0;padding:0;position:relative;z-index:1;background:none;}
+.hero .eyebrow {color:var(--accent);font-size:.65rem;letter-spacing:.09em;font-weight:700;opacity:1;margin-bottom:17px;}
+.hero h1 {font-size:clamp(3.4rem,5.4vw,5rem);font-weight:600;letter-spacing:-.065em;line-height:.98;color:var(--ink);text-shadow:none;}
+.hero h1 span {display:block;color:var(--accent);font-family:inherit!important;font-style:normal;}
+.hero .intro {display:block;max-width:460px;color:var(--muted);font-size:.93rem;line-height:1.8;margin:20px 0 16px;}
+.hero-tags {display:flex;gap:8px;margin:0;}.hero-tags span {font-size:.65rem;background:var(--paper);color:var(--muted);border:1px solid var(--line);padding:4px 9px;}
+.hero-tags .draft {background:light-dark(#e5f4b6,#35422c);color:light-dark(#415322,#d8efa2);border-color:transparent;}
+.hero-actions {display:flex;align-items:center;gap:24px;margin-top:23px;}
+.hero-actions a {font-size:.81rem;font-weight:700;text-decoration:none;color:var(--ink);min-height:44px;display:inline-flex;align-items:center;}
+.hero-actions .primary-action {background:var(--ink);color:var(--paper);padding:11px 19px;border-radius:13px;box-shadow:0 5px 12px #152e3915;}
+.stats,.mobile-ready .stats,.mobile-overview,.mobile-ready .mobile-overview {display:none!important;}
+.status-note {padding:0;margin:0;border:1px solid var(--line);background:var(--paper);border-radius:14px;color:var(--muted);box-shadow:none;}
+.desktop-status {display:none!important;}.mobile-status {display:block!important;}
+.mobile-status > summary {display:flex!important;align-items:center;gap:9px;min-height:48px;padding:12px 17px;list-style:none;color:var(--muted);font-size:.76rem;font-weight:500;}
+.mobile-status > summary:after {content:'Details +';margin-left:auto;font-size:.7rem;color:var(--accent);white-space:nowrap;}
+.mobile-status[open] > summary:after {content:'Close −';}.mobile-status > div {padding:0 17px 16px;font-size:.82rem;}
+.status-dot {width:7px;height:7px;border-radius:50%;background:var(--accent);}
+.trip-dashboard {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:20px;}
+.dashboard-card {display:flex;flex-direction:column;gap:7px;padding:21px 23px;border:1px solid var(--line);border-radius:19px;background:var(--paper);color:var(--ink);text-decoration:none;transition:transform .18s,box-shadow .18s;}
+.dashboard-card:nth-child(2) {background:light-dark(#fff0e8,#382c2c);border-color:light-dark(#f5dfd2,#504040);}
+.dashboard-card:nth-child(3) {background:light-dark(#edf6da,#2a3829);border-color:light-dark(#e0ecc7,#40503c);}
+.dashboard-label {font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--muted);}
+.dashboard-card strong {font-size:1.58rem;font-weight:600;line-height:1.2;letter-spacing:-.04em;}.dashboard-card strong small {font:500 .8rem 'Plus Jakarta Sans',sans-serif;color:var(--muted);}
+.dashboard-card > span:last-child {font-size:.72rem;color:var(--muted);}
+.section {padding-top:58px;}.section-head {border:0;background:transparent;box-shadow:none;padding:0;align-items:center;margin-bottom:23px;gap:30px;}
+.section-head .kicker {font-size:.64rem;letter-spacing:.12em;margin-bottom:8px;}.section-head h2 {font-size:2.15rem;font-weight:600;line-height:1.1;}
+.section-head p {font-size:.8rem;line-height:1.8;max-width:470px;}
+.mobile-ready #itinerary > .section-head p {display:block;}.mobile-ready #itinerary > .section-head .kicker {display:block;}
+.desktop-itinerary,#itinerary > .note {display:none!important;}.mobile-plan {display:block!important;}
+.day-picker {display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px;padding:8px;background:var(--paper);border:1px solid var(--line);border-radius:19px;box-shadow:none;overflow-x:auto;margin:0 0 16px;}
+.day-chip {display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:3px;min-height:76px;min-width:0;width:auto;padding:10px 18px;background:transparent;color:var(--muted);border:0;border-radius:13px;font-size:.7rem;transition:background .18s,transform .18s;}
+.day-chip b {font-family:'Outfit',sans-serif;font-size:1.7rem;line-height:1.1;font-weight:500;}.day-chip[aria-pressed=true] {background:var(--accent);color:var(--paper);box-shadow:0 5px 12px #047c7920;}
+.day-chip:after {display:none;}.day-chip:active {transform:scale(.96);}
+.phone-day {display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:17px 40px;padding:30px;background:var(--paper);border:1px solid var(--line);border-radius:22px;box-shadow:var(--surface-shadow);}
+.phone-day[hidden] {display:none!important;}.day-card-top {grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;margin:0;color:var(--muted);font-size:.72rem;}
+.day-island {display:inline-flex;background:var(--soft);color:var(--accent);padding:5px 11px;border-radius:99px;font-weight:700;font-size:.68rem;}
+.phone-day h3 {grid-column:1;grid-row:2;font-size:2rem;line-height:1.12;margin:0;max-width:390px;}
+.timeline-label {grid-column:2;grid-row:2;align-self:end;font-size:.62rem;letter-spacing:.1em;color:var(--muted);margin:0;text-transform:uppercase;}
+.day-timeline {grid-column:2;grid-row:3/span 4;margin:0;padding:0;list-style:none;border:0;}
+.day-timeline li {display:grid;grid-template-columns:108px minmax(0,1fr);gap:17px;padding:15px 0;border:0;border-top:1px solid var(--line);font-size:.8rem;line-height:1.7;}
+.slot-time {font-weight:700;color:var(--accent);font-size:.74rem;font-variant-numeric:tabular-nums;}
+.day-watch {grid-column:1;grid-row:3;margin:0;padding:15px 17px;background:var(--surface-quiet);border:0;border-left:3px solid light-dark(#edb681,#b28764);border-radius:0 12px 12px 0;color:var(--muted);font-size:.78rem;line-height:1.75;}
+.day-watch strong {display:block;font-size:.65rem;color:var(--ink);font-weight:700;letter-spacing:.04em;margin-bottom:5px;}
+.day-sleep {grid-column:1;grid-row:4;display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:0;padding:0;color:var(--muted);font-size:.7rem;border:0;background:none;}
+.day-sleep strong {color:var(--ink);}.day-map-link {grid-column:1;grid-row:5;display:flex;align-items:center;justify-content:space-between;align-self:start;min-height:44px;padding:10px 14px;background:var(--soft);color:var(--accent);border:0;border-radius:12px;font-size:.75rem;font-weight:700;text-decoration:none;}
+.day-full {grid-column:1/-1;grid-row:7;border-top:1px solid var(--line);padding-top:15px;margin:0;}.day-full summary {font-size:.75rem;min-height:36px;color:var(--muted);font-weight:600;}
+.day-full > div {font-size:.84rem;line-height:1.85;color:var(--muted);padding-top:14px;}.day-full .note {font-size:inherit;}
+.day-stepper {display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:14px;color:var(--muted);font-size:.69rem;}
+.day-stepper button {padding:10px 14px;min-height:44px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);font-size:.72rem;}.day-stepper button:disabled {opacity:.35;}
+.mobile-notes {display:block;margin-top:12px;color:var(--muted);font-size:.75rem;}.mobile-notes > summary {min-height:40px;padding:8px 0;}.mobile-notes .note {font-size:.8rem;}
+.map-section {margin-top:0;}.route-strip {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:15px;background:var(--paper);overflow:hidden;margin-bottom:15px;}
+.route-stop {padding:14px 18px;border:0;border-right:1px solid var(--line);border-radius:0;background:transparent;font-size:.78rem;}.route-stop:last-child {border:0;}.route-stop:after {display:none;}.route-stop b,.route-stop span {display:block;}.route-stop span {font-size:.67rem;margin-top:3px;}
+.map-frame {border-radius:22px;box-shadow:var(--surface-shadow);}.map-caption {font-size:.71rem;line-height:1.85;margin-top:14px;color:var(--muted);}
+.cards {grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}.card {padding:25px;border:1px solid var(--line);border-radius:20px;box-shadow:var(--surface-shadow);background:var(--paper);}
+.card .place {font-size:.62rem;letter-spacing:.09em;margin-bottom:9px;}.card h3 {font-size:1.7rem;font-weight:500;margin-bottom:10px;}.card .badge {font-size:.64rem;font-weight:600;margin-bottom:18px;padding:4px 9px;}
+.card-booked {border-top:3px solid var(--accent);}.card .stay-price {font-family:'Outfit',sans-serif;color:var(--ink);font-size:2.2rem;letter-spacing:-.035em;line-height:1.1;font-weight:500;margin:0 0 20px;}
+.stay-price small {display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:.65rem;letter-spacing:0;color:var(--muted);font-weight:400;margin-top:7px;}
+.stay-facts {list-style:none;padding:0;margin:0 0 18px;display:flex;flex-direction:column;gap:7px;font-size:.77rem;color:var(--muted);}.stay-facts li:before {content:'✓';display:inline-block;margin-right:9px;color:var(--accent);font-weight:700;}
+.stay-details {padding-top:13px;border-top:1px solid var(--line);margin:0 0 14px;}.stay-details summary {font-size:.74rem;color:var(--ink);min-height:36px;}.card .stay-details p {font-size:.76rem;line-height:1.9;margin:10px 0 0;}
+.stay-cta {display:inline-flex;align-items:center;min-height:44px;padding:9px 14px;border:1px solid var(--line);background:var(--surface-quiet);border-radius:11px;text-decoration:none;font-size:.73rem;font-weight:700;}
+.budget-summary {border-radius:20px;}.budget-table {font-size:.8rem;}.budget-table td {padding:14px 17px;}.budget-table td small {font-size:.72rem;line-height:1.7;}
+.budget-summary .total {font-family:'Outfit',sans-serif;font-size:3.2rem;}.budget-summary .per {font-family:'Outfit',sans-serif;}
+.activity-list {gap:16px;}.activity {padding:23px;border:1px solid var(--line);border-radius:19px;background:var(--paper);grid-template-columns:32px minmax(0,1fr);gap:14px;box-shadow:var(--surface-shadow);}.activity h3 {font-size:1.16rem;line-height:1.35;}.activity p {font-size:.77rem;line-height:1.85;}.activity-num {width:30px;height:30px;font-size:.7rem;}
+.booking-group {padding:0;background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:none;margin:14px 0 0!important;}
+.booking-fold {display:block!important;}.desktop-booking-heading,.booking-group > .desktop-section-content {display:none!important;}
+.booking-fold > summary {display:flex!important;align-items:center;min-height:64px;padding:20px 23px;font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:500;list-style:none;color:var(--ink);}
+.booking-fold > summary:after {content:'+';margin-left:auto;font-size:1.4rem;color:var(--accent);}.booking-fold[open] > summary:after {content:'−';}
+.booking-now {border-color:light-dark(#efc7ae,#6c5140);}.booking-now > .booking-fold > summary {background:light-dark(#fff1e8,#3a2c26);color:light-dark(#8c4b23,#ffc69b);}
+.booking-fold > .section-fold-body {padding:0 22px 12px;}.booking-fold .fine {font-size:.7rem;margin:0 0 12px;}
+.booking-fold .panel {border-radius:13px;border-color:var(--line);}.check-list li {padding:15px 17px;font-size:.81rem;}.task-detail > summary {display:block!important;min-height:32px;color:var(--ink);font-size:.8rem;font-weight:600;margin:0;list-style:none;}.task-detail > summary:after {content:' +';color:var(--accent);}.task-detail[open] > summary:after {content:' −';}.task-detail small {font-size:.75rem;line-height:1.85;margin:7px 0;}.pending {font-size:.64rem;padding:4px 8px;}
+.fine {font-size:.73rem;line-height:1.9;}.sources {font-size:.76rem;}.footer {background:transparent;font-size:.7rem;margin-top:36px;}
+.floating-card {transition:transform .18s ease,box-shadow .18s ease!important;}
+.floating-card.is-touch-pressed {transform:scale(.993)!important;}
+@media(min-width:761px) {
+  :is(#price-check,#transport,#guide-notes) > .desktop-section-content {display:none;}
+  :is(#price-check,#transport,#guide-notes) > .section-fold {display:block;background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:0 20px;}
+  :is(#price-check,#transport,#guide-notes) > .section-fold > summary {display:list-item;min-height:56px;padding-block:16px;font-size:.8rem;color:var(--accent);}
+  :is(#price-check,#transport,#guide-notes) .section-fold-body {padding-bottom:20px;}
+}
+@media(hover:hover) and (pointer:fine) {
+  .dashboard-card:hover,.card:hover {transform:translateY(-3px);box-shadow:var(--surface-lift-shadow);}
+  .floating-card.section-head:hover {transform:none;box-shadow:none;}
+  .day-chip:not([aria-pressed=true]):hover {background:var(--soft);}
+  .hero-actions a:hover,.stay-cta:hover {filter:brightness(.94);}
+}
+@media(max-width:1000px) and (min-width:761px) {
+  .shell {padding-inline:25px;}.top nav a {padding-inline:8px;}.hero > .shell:after {width:31%;right:30px;}.hero-inner {max-width:63%;}.hero h1 {font-size:4rem;}.dashboard-card {padding:18px;}.dashboard-card strong {font-size:1.35rem;}.phone-day {gap:15px 25px;}.day-chip {padding-inline:13px;}.day-timeline li {grid-template-columns:96px minmax(0,1fr);gap:10px;}
+}
+@media(max-width:760px) {
+  html {scroll-padding-top:82px;}body {font-size:16px;line-height:1.7;padding-bottom:calc(90px + env(safe-area-inset-bottom,0px));}.shell {padding-inline:18px;}
+  .top-inner {min-height:64px;padding-block:8px;flex-wrap:nowrap;gap:8px;}.brand {font-size:1.15rem;}.top nav {display:none;}.theme-picker button {min-height:36px;min-width:44px;font-size:.68rem;padding:6px 8px;}
+  .hero {margin:0;width:auto;border-radius:0;}.hero > .shell {padding:31px 20px 27px;min-height:0;}.hero > .shell:after {width:115px;height:140px;top:31px;right:-27px;bottom:auto;border-radius:45px 15px 45px 15px;transform:rotate(9deg);opacity:.8;outline:5px solid var(--paper);z-index:0;}
+  .hero-inner {max-width:100%;padding:0;}.hero .eyebrow {max-width:250px;font-size:.55rem;letter-spacing:.055em;margin-bottom:15px;}.hero h1 {font-size:3.25rem;max-width:270px;line-height:1;}.hero h1 span {display:block;}.hero h1 span:before {content:none;}
+  .hero .intro {display:block;font-size:.78rem;line-height:1.8;max-width:290px;margin:14px 0 0;}.hero-tags {display:none;}.hero-actions {gap:20px;margin-top:18px;}.hero-actions a {font-size:.7rem;}.hero-actions .primary-action {padding:10px 14px;border-radius:11px;}
+  .status-note {border-radius:12px;}.mobile-status > summary {padding:11px 12px;font-size:.65rem;gap:7px;}.mobile-status > summary:after {font-size:.6rem;}.mobile-status > div {font-size:.77rem;padding:0 13px 13px;}
+  .trip-dashboard {grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px;}.dashboard-card {padding:14px 13px;gap:6px;border-radius:14px;}.dashboard-card:nth-child(3) {display:none;}.dashboard-label {font-size:.5rem;letter-spacing:.045em;}.dashboard-card strong {font-size:1.2rem;}.dashboard-card strong small {font-size:.6rem;}.dashboard-card > span:last-child {font-size:.57rem;line-height:1.6;}
+  .section {padding-top:35px;}.section-head {gap:10px;margin-bottom:17px;align-items:flex-start;}.section-head h2 {font-size:1.8rem;}.section-head .kicker {font-size:.54rem;margin-bottom:7px;}.section-head p {font-size:.72rem;line-height:1.8;}.mobile-ready #itinerary > .section-head p {display:none;}
+  .day-picker {display:flex;gap:3px;padding:6px;border-radius:14px;margin-bottom:12px;scrollbar-width:none;}.day-chip {flex:1 0 35px;min-width:35px;min-height:63px;padding:8px 6px;align-items:center;border-radius:10px;font-size:.56rem;}.day-chip b {font-size:1.35rem;}
+  .phone-day {display:block;padding:20px 17px;border-radius:18px;}.day-card-top {font-size:.64rem;margin-bottom:17px;}.day-island {font-size:.6rem;padding:4px 9px;}.phone-day h3 {font-size:1.65rem;line-height:1.16;margin-bottom:20px;}.timeline-label {font-size:.55rem;margin-bottom:8px;}
+  .day-timeline li {grid-template-columns:88px minmax(0,1fr);gap:12px;font-size:.73rem;padding:15px 0;}.slot-time {font-size:.66rem;}.day-watch {font-size:.71rem;line-height:1.8;margin-top:16px;padding:13px;}.day-watch strong {font-size:.59rem;}.day-sleep {margin-top:18px;font-size:.65rem;gap:6px;}.day-map-link {margin-top:16px;font-size:.7rem;}.day-full {margin-top:18px;padding-top:14px;}.day-full summary {font-size:.68rem;}.day-full > div {font-size:.76rem;}
+  .day-stepper {font-size:.61rem;}.day-stepper button {font-size:.64rem;padding:10px;}.mobile-notes {font-size:.65rem;}.mobile-notes .note {font-size:.73rem;}
+  .route-strip {grid-template-columns:repeat(2,minmax(0,1fr));border-radius:13px;}.route-stop {padding:11px 13px;font-size:.7rem;border-bottom:1px solid var(--line);}.route-stop:nth-child(even) {border-right:0;}.route-stop:nth-child(n+3) {border-bottom:0;}.route-stop span {font-size:.61rem;}.map-frame {border-radius:17px;}.map-caption {font-size:.64rem;}
+  .cards {grid-template-columns:1fr;gap:14px;}.card {padding:21px;border-radius:17px;}.card .place {font-size:.57rem;}.card h3 {font-size:1.55rem;}.card .stay-price {font-size:2.1rem;}.stay-price small {font-size:.63rem;}.stay-facts {font-size:.73rem;}.stay-details summary {font-size:.7rem;}.card .stay-details p {font-size:.72rem;}.stay-cta {font-size:.69rem;}
+  .section-fold {border-radius:15px;background:var(--paper);border:1px solid var(--line);box-shadow:none;}.section-fold > summary {padding:16px 14px;font-size:.77rem;line-height:1.7;min-height:56px;color:var(--accent);}.section-fold-body {padding:0 12px 15px;}
+  .budget-grid {gap:14px;}.budget-table {font-size:.72rem;}.budget-table td {padding:12px 10px;}.budget-table td small {font-size:.65rem;}.budget-summary {padding:23px;}.budget-summary .per {font-size:1.2rem;}
+  .activity-list {gap:12px;}.activity {padding:18px;grid-template-columns:27px minmax(0,1fr);gap:10px;border-radius:15px;}.activity-num {width:25px;height:25px;font-size:.6rem;}.activity h3 {font-size:1.05rem;}.activity p {font-size:.72rem;}
+  .booking-fold > summary {min-height:60px;padding:17px;font-size:1.06rem;}.booking-fold > .section-fold-body {padding:0 12px 12px;}.check-list li {padding:13px 11px;gap:8px;grid-template-columns:23px minmax(0,1fr);}.task-detail > summary {font-size:.72rem;line-height:1.7;}.task-detail small {font-size:.69rem;}.pending {font-size:.58rem;}.booking-fold .fine {font-size:.62rem;}
+  .phone-nav {position:fixed;left:12px;right:12px;bottom:max(10px,env(safe-area-inset-bottom,0px));display:grid;grid-template-columns:repeat(5,minmax(0,1fr));z-index:50;padding:6px;background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:0 6px 30px #132b3f24;backdrop-filter:none;}
+  .phone-nav a {min-height:48px;display:flex;align-items:center;justify-content:center;text-decoration:none;border-radius:12px;font-size:.65rem;font-weight:700;color:var(--muted);}.phone-nav a[aria-current] {background:var(--accent);color:var(--paper);}.phone-nav a:active {transform:scale(.96);}
+  .fine {font-size:.66rem;}.footer {margin-top:25px;font-size:.63rem;}.footer-inner {gap:10px;}
+}
+@media(max-width:360px) { .shell {padding-inline:13px;}.hero h1 {font-size:2.95rem;}.hero .eyebrow {max-width:220px;}.hero > .shell:after {right:-43px;}.phone-day {padding:18px 14px;}.day-timeline li {grid-template-columns:80px minmax(0,1fr);gap:9px;}.dashboard-card strong {font-size:1.05rem;} }
+@media(prefers-reduced-motion:reduce) {html {scroll-behavior:auto;}*,*:before,*:after {transition:none!important;animation:none!important;}.floating-card,.floating-card:hover,.floating-card.is-touch-pressed {transform:none!important;}}
 </style>
 
 <meta name="description" content="The shared Andaman trip plan for five friends, 11–18 December 2026. Interactive routes, itinerary, budget, hotel shortlist and booking status.">
@@ -943,7 +1083,7 @@ main.shell { padding-bottom: 20px; }
 <meta property="og:title" content="Andaman 2026 · Our trip plan">
 <meta property="og:description" content="11–18 December · 5 friends · Port Blair, Havelock, Neil and Baratang. Route map, itinerary, ₹60k/person budget ceiling and booking status.">
 <meta name="theme-color" content="#075675">
-<link rel="preload" as="image" href="./assets/andaman-coast.webp"><script>(() => {
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link rel="preload" as="image" href="./assets/andaman-coast.webp"><script>(() => {
   let theme;
   try { theme = localStorage.getItem('andaman-dec-2026:theme'); } catch {}
   if (theme !== 'light' && theme !== 'dark') {
@@ -956,11 +1096,12 @@ main.shell { padding-bottom: 20px; }
 <body>
 <div class="island-backdrop" aria-hidden="true"></div>
 <a class="skip" href="#itinerary">Skip to itinerary</a>
-<header class="top" id="top"><div class="shell top-inner"><a class="brand" href="#top">Andaman<span> / 2026</span></a><nav aria-label="Trip sections"><a href="#map">Route map</a><a href="#itinerary">Day by day</a><a href="#budget">Budget</a><a href="#stays">Stays</a><a href="#bookings">To book</a></nav><div class="theme-picker" role="group" aria-label="Page appearance"><button type="button" data-theme-choice="light" aria-pressed="false">Light</button><button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button></div></div></header>
-<section class="hero" aria-labelledby="trip-title"><div class="shell"><div class="hero-inner"><div class="eyebrow">11–18 December 2026 · Five friends · Seven nights</div><h1 id="trip-title">A week in<span>the Andamans.</span></h1><p class="intro">Reefs, mangroves and quiet beaches. A practical route through Port Blair, Havelock and Neil, with time for the limestone caves and the islands’ history.</p><div class="hero-tags"><span class="draft">Bookings underway</span><span>Updated 1 Nov 2026</span><span>2 rooms · 2 + 3 adults</span></div></div></div></section>
+<header class="top" id="top"><div class="shell top-inner"><a class="brand" href="#top">Andaman<span> / 2026</span></a><nav aria-label="Trip sections"><a href="#itinerary">Our days</a><a href="#map">Route map</a><a href="#stays">Stays</a><a href="#budget">Budget</a><a href="#bookings">Bookings</a></nav><div class="theme-picker" role="group" aria-label="Page appearance"><button type="button" data-theme-choice="light" aria-pressed="false">Light</button><button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button></div></div></header>
+<section class="hero" aria-labelledby="trip-title"><div class="shell"><div class="hero-inner"><div class="eyebrow">11–18 December 2026 · Five friends · Seven nights</div><h1 id="trip-title">Andaman,<span>together.</span></h1><p class="intro">Eight days of reefs, beach sunsets and good company. Our shared plan for five friends, from the first ferry to the last coconut.</p><div class="hero-tags"><span class="draft">The plans are coming together</span><span>Updated 1 Nov 2026</span></div><div class="hero-actions"><a class="primary-action" href="#itinerary">Explore our days →</a><a href="#map">Open the map ↗</a></div></div></div></section>
 <main class="shell">
 <div class="stats" aria-label="Trip summary"><div class="stat"><small>Total plan</small><strong>₹60,000 / person</strong><span>Budget ceiling · includes flights</span></div><div class="stat"><small>Island nights</small><strong>3 + 2 + 2</strong><span>Port Blair · Havelock · Neil</span></div><div class="stat"><small>Already booked</small><strong>Flights + ferries</strong><span>Plus Port Blair stay · 11–13 Dec</span></div></div>
 <p class="status-note"><strong>Flights, three ferries and the first Port Blair stay are booked.</strong> Ferries cost ₹30,000 including GST for all five. Andaman Shores is booked through Agoda for 11–13 Dec at ₹12,000 without breakfast; its payment status is not recorded. The other five hotel nights, activities and DIY Baratang tickets remain to arrange. Flight timings still need checking against the tickets.</p>
+<div class="trip-dashboard" aria-label="Trip at a glance"><a class="dashboard-card" href="#budget"><span class="dashboard-label">The working budget</span><strong>₹59,130 <small>each</small></strong><span>Includes flights + contingency ↗</span></a><a class="dashboard-card" href="#stays"><span class="dashboard-label">Up next</span><strong>Choose our stays</strong><span>5 hotel nights still to book ↗</span></a><a class="dashboard-card" href="#map"><span class="dashboard-label">Our island escape</span><strong>3 islands. 7 nights.</strong><span>Plus a Baratang day adventure ↗</span></a></div>
 <section class="section map-section" id="map" aria-labelledby="map-heading"><div class="section-head"><div><div class="kicker">The route</div><h2 id="map-heading">Island route.</h2></div><p>Choose a day for local stops and journey times.</p></div><div class="route-strip" aria-label="Stay dates"><div class="route-stop"><b>Port Blair</b><span>11–13 Dec</span></div><div class="route-stop"><b>Havelock</b><span>13–15 Dec</span></div><div class="route-stop"><b>Neil</b><span>15–17 Dec</span></div><div class="route-stop"><b>Port Blair</b><span>17–18 Dec</span></div></div><div class="map-frame">
 
 <iframe id="codex-visualization" sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox" referrerpolicy="no-referrer" title="Andaman Route Map" data-srcdoc="&lt;!doctype html&gt;
@@ -4069,11 +4210,12 @@ body { line-height: 1.65; }
 <details class="sources"><summary>DIY Baratang calculation and other cost checks</summary><p style="margin-top:12px"><strong>12 Dec DIY Baratang allocation: ₹11,000/group before food.</strong> The working arithmetic is bus ₹2,000 + walk-on strait ferry ₹160 + cave/mangrove boat ₹6,000 + bus-terminal transfers ₹800 + optional Mud Volcano/local guide reserve ₹1,000 = ₹9,960, with ₹1,040 headroom for unknown fees. These allowances are not an all-inclusive quote; optional Mud Volcano depends on return connections.</p><p>The <a href="https://ants.andamannicobar.gov.in/" target="_blank" rel="noopener noreferrer">official ANTS search ↗</a> displayed AC S007 04:00–07:45 outbound and S008 14:30–17:30 return at ₹200/person/way for <strong>31 Oct</strong>, checked 25 Oct. <strong>12 Dec inventory, timetable and checkout charges are unverified.</strong> The <a href="https://dss.andamannicobar.gov.in/ShipAndamanWebSite/services/passenger-services/harbour-services.html" target="_blank" rel="noopener noreferrer">official Middle Strait ferry page ↗</a> displays ₹16/person/way and continuous 06:00–20:00 service with no fixed departure; buy daily tickets at the harbour counter.</p><p>A boat-owners' association notice in the <a href="https://dt.andamannicobar.gov.in/epaper/06062026103242393.pdf" target="_blank" rel="noopener noreferrer">6 June Daily Telegrams ↗</a> announces ₹1,200/person from 1 September: ₹6,000 for five. This is not a government tariff order. Return-journey, permit, guide and tax coverage need checking. The earlier ₹900 assumption is superseded.</p><p><strong>Current allocation:</strong> hotels ₹55,000; inter-island ferries ₹30,000; Havelock scuba ₹29,500; Havelock kayak ₹12,500; Neil snorkel ₹10,000; DIY Baratang ₹11,000; other local vehicles ₹11,000; food ₹20,000; Cellular Jail ₹1,650; souvenirs ₹5,000; contingency ₹10,000. Ground total <strong>₹1,95,650</strong>; paid flights ₹1,00,000 bring it to <strong>₹2,95,650</strong>. Avoid counting the ₹800 bus-terminal rides again in local vehicles.</p><p><strong>Cellular Jail:</strong> the <a href="https://tourism.andamannicobar.gov.in/museums_details.php?data=v9T7es8XHBgEJNb74WeKTmaooyJ5Ml6-vJuWixBDw_rxh87FgWmVyxU" target="_blank" rel="noopener noreferrer">official museum page ↗</a> lists ₹30 entry + ₹300 show per Indian adult: ₹1,650 for five. Camera charges and different nationality tariffs are extra.</p><p><strong>Local vehicles:</strong> the <a href="https://dekhoandaman.com/andaman-cab-service/cab-price-list-2026/" target="_blank" rel="noopener noreferrer">2026 cab table ↗</a> is a benchmark. Confirm capacity and bags, hotel zones, waiting, taxes and return legs; avoid duplicate included transfers.</p><p><strong>Booked ferry buffers:</strong> 13 Dec Nautika Pro departs 12:30; target Haddo reporting 11:30 after a 20–30 minute drive from Andaman Shores. On 15 Dec, recover after kayaking, store bags after the hotel checkout deadline and have lunch before 13:30 jetty reporting for the 14:30 Makruzz. On 17 Dec, target Neil reporting 08:30 for the 09:30 Nautika Royal. Issued tickets govern all reporting and baggage requirements.</p></details>
 </section>
 
-<section class="section" id="stays" aria-labelledby="stays-heading"><div class="section-head"><div><div class="kicker">Two rooms · 2 + 3 adults</div><h2 id="stays-heading">Stay in useful locations.</h2></div><p>Andaman Shores is booked for 11–13 Dec. The island offers below were checked for our dates and all five adults on 1 November; they are not booked or held. The final Port Blair night on 17 Dec still needs a reservation.</p></div><div class="cards">
-<article class="card"><div class="place">Port Blair · first 2 nights booked</div><h3>Andaman Shores · Lamba Line</h3><span class="badge">11–13 Dec · booked through Agoda</span><p><a class="candidate" href="https://www.andamanshores.in/about.php" target="_blank" rel="noopener noreferrer">Andaman Shores ↗</a><strong>₹12,000 for five, two nights; breakfast excluded.</strong> Stay on 11 and 12 December, checkout on 13 December. Citizen Colony, Lamba Line is near the airport; it is not the old Haddo hotel candidate. Keep the Agoda voucher privately for room categories, bedding and payment terms.</p><p class="alt"><strong>17–18 Dec remains unbooked.</strong> Request a separate final-night offer from this hotel or a practical central property; the current reservation does not cover 17 Dec. Arrange the pre-dawn 12 Dec bus-terminal transfer and the 13 Dec Haddo drop from Lamba Line.</p></article>
-<article class="card"><div class="place">Havelock · 13–15 Dec · 2 nights</div><h3>Ile Bay · pool comfort option</h3><span class="badge">Agoda quote checked 1 Nov · not booked</span><p><a class="candidate" href="https://www.agoda.com/ile-bay-resort/hotel/andaman-and-nicobar-islands-in.html?checkIn=2026-12-13&amp;los=2&amp;rooms=2&amp;adults=5&amp;children=0&amp;currency=INR" target="_blank" rel="noopener noreferrer">Ile Bay Resort · exact-date search ↗</a><strong>₹24,149.32 for all five, two Deluxe Chalets and two nights.</strong> Agoda checkout includes breakfast, one extra bed for two nights and displayed taxes/fees. Non-refundable, pay-now offer; rates are not held.</p><p class="alt">AC rooms, pool and restaurant in Govind Nagar; the property advertises about 1 km from the jetty. It is not beachfront. Confirm the early scuba/kayak pickups and post-checkout luggage storage. The headline ₹4,917/room/night excludes taxes and the ₹3,000 extra-bed charge. Cheaper comfort alternatives still need complete dated quotes; do not compare headline prices.</p></article>
-<article class="card"><div class="place">Neil · 15–17 Dec · 2 nights</div><h3>Akash Resort · saving candidate</h3><span class="badge">MMT quote checked 1 Nov · not booked</span><p><a class="candidate" href="https://www.makemytrip.com/hotels/hotel-details/?checkin=12152026&amp;checkout=12172026&amp;locusId=CTNIL&amp;locusType=city&amp;city=CTNIL&amp;country=IN&amp;roomStayQualifier=3e0e2e0e&amp;_uCurrency=INR&amp;hotelId=202111261701355774&amp;isPropSearch=T" target="_blank" rel="noopener noreferrer">Akash Resort · exact-date search ↗</a><strong>₹8,586 total for five, two nights and two AC rooms</strong>, including displayed tax/service fees, without meals. Verified combination: AC double for 2 and AC triple for 3, with a king plus single bed in the triple. About ₹859/person/night. Rooms are compact; review current bathroom photos.</p><p class="alt"><strong>Manually select both AC room types:</strong> the default cheapest combination can include a non-AC triple. The captured offer has free cancellation before 12 Dec 11:59 am; pay-later ₹8,698 was also shown. Neil Kendra/Bharatpur side, roughly 1–1.5 km from the jetty by guest reports; arrange a short luggage transfer. Date, rate and cancellation terms must be rechecked before booking.</p></article>
-</div><p class="fine">Compare the complete five-adult total, AC/private bathrooms, third-person bedding, taxes, meals and cancellation terms. Andaman Shores ₹12,000 + the quoted Ile Bay ₹24,149.32 + Akash ₹8,586 =₹44,735.32 for six nights;₹10,264.68 remains within the ₹55,000 hotel ceiling for 17 Dec. Only Andaman Shores is booked; the other figures are changing offers. Budget separately for breakfasts not included in a room deal.</p></section>
+<section class="section" id="stays" aria-labelledby="stays-heading"><div class="section-head"><div><div class="kicker">A good base for each island</div><h2 id="stays-heading">Where we’ll recharge.</h2></div><p>First Port Blair stay booked. These island offers were checked on 1 November for five adults; recheck before paying. The 17 December night is still open.</p></div><div class="cards">
+<article class="card card-booked"><div class="place">Port Blair · 11–13 December</div><h3>Andaman Shores</h3><span class="badge">Booked through Agoda</span><p class="stay-price">₹12,000<small>Total · 5 adults · 2 nights</small></p><ul class="stay-facts"><li>Lamba Line · near the airport</li><li>Breakfast excluded</li><li>Checkout 13 December</li></ul><details class="stay-details"><summary>What to know</summary><p>Citizen Colony, Lamba Line. Arrange the early Baratang bus-terminal ride and allow 20–30 minutes to Haddo on 13 Dec. Keep the private Agoda voucher for the booked rooms, bedding, checkout deadline and payment terms. Payment status is not recorded here. The 17–18 Dec stay needs a separate reservation.</p></details><a class="stay-cta" href="https://www.andamanshores.in/about.php" target="_blank" rel="noopener noreferrer">View hotel ↗</a></article>
+<article class="card"><div class="place">Havelock · 13–15 December</div><h3>ILE Bay Resort</h3><span class="badge">Pool + breakfast · not booked</span><p class="stay-price">₹24,149.32<small>Total · 5 adults · 2 nights</small></p><ul class="stay-facts"><li>2 AC Deluxe Chalets + 1 extra bed</li><li>Breakfast, pool and restaurant</li><li>Govind Nagar · about 1 km from jetty*</li></ul><details class="stay-details"><summary>What to know</summary><p>Agoda’s final review includes ₹3,000 for the extra bed over two nights and displayed taxes/fees. Non-refundable, pay now. The ₹4,917 room/night headline is not the complete group cost. Not beachfront; the approach is off the main road. *Jetty distance is the property’s claim. Confirm pre-dawn activity pickups and luggage storage after checkout.</p></details><a class="stay-cta" href="https://www.agoda.com/ile-bay-resort/hotel/andaman-and-nicobar-islands-in.html?checkIn=2026-12-13&amp;los=2&amp;rooms=2&amp;adults=5&amp;children=0&amp;currency=INR" target="_blank" rel="noopener noreferrer">View Agoda offer ↗</a></article>
+<article class="card"><div class="place">Havelock · 13–15 December</div><h3>Green Imperial</h3><span class="badge">Cheaper cottage option · not booked</span><p class="stay-price">₹18,956<small>Total · 5 adults · 2 nights · no meals</small></p><ul class="stay-facts"><li>2 Standard Cottages + 1 mattress</li><li>AC listed · 2 attached bathrooms</li><li>Govind Nagar Beach · main-road access</li></ul><details class="stay-details"><summary>Comfort, breakfast &amp; cancellation</summary><p>MMT final review: 3 + 2 adults, displayed taxes/service fees included. Breakfast-inclusive offer: ₹20,639 for the group, saving ₹3,510.32 (about ₹702 each) against ILE Bay with breakfast. Room-only saves ₹5,193.32 before buying breakfasts. Simpler cottages; no pool is listed. MMT rating 4.3/5 from 240 ratings at the check; recent reviews flag occasional bathroom pests and off-season Wi-Fi/restaurant issues. Free cancellation before 28 Nov 10:59 am on the captured offer. Checkout 9 am: arrange bag storage after the kayak. Pay-later rates were higher. SBI debit offers are advertised but eligibility and the final card price are unverified.</p></details><a class="stay-cta" href="https://www.makemytrip.com/hotels/hotel-details/?hotelId=202409171926075189&amp;checkin=12132026&amp;checkout=12152026&amp;roomStayQualifier=3e0e2e0e&amp;_uCurrency=INR&amp;city=CTXXX&amp;country=IN&amp;homeStay=true&amp;rsc=2e5e0e" target="_blank" rel="noopener noreferrer">View MMT offer ↗</a></article>
+<article class="card"><div class="place">Neil · 15–17 December</div><h3>Akash Resort</h3><span class="badge">Budget candidate · not booked</span><p class="stay-price">₹8,586<small>Total · 5 adults · 2 nights · no meals</small></p><ul class="stay-facts"><li>AC double + AC triple · proper beds</li><li>About ₹859 per person/night</li><li>Neil Kendra / Bharatpur side</li></ul><details class="stay-details"><summary>Choose both AC rooms</summary><p>MMT review includes displayed taxes/service fees. Select the AC double for 2 and AC triple for 3 explicitly: the default cheapest combination can include a non-AC triple. The triple has a king + single bed. Rooms are compact; check recent bathroom photos. Free cancellation before 12 Dec 11:59 am on the captured offer; pay-later ₹8,698 was also shown. Guest reports put the jetty roughly 1–1.5 km away; arrange a short luggage transfer. Checkout 10 am suits the booked morning ferry.</p></details><a class="stay-cta" href="https://www.makemytrip.com/hotels/hotel-details/?checkin=12152026&amp;checkout=12172026&amp;locusId=CTNIL&amp;locusType=city&amp;city=CTNIL&amp;country=IN&amp;roomStayQualifier=3e0e2e0e&amp;_uCurrency=INR&amp;hotelId=202111261701355774&amp;isPropSearch=T" target="_blank" rel="noopener noreferrer">View MMT offer ↗</a></article>
+</div><p class="fine">Hotel ceiling: ₹55,000 for all seven nights. Andaman Shores + Green Imperial with breakfast + Akash would total ₹41,225 for six nights, leaving ₹13,775 for 17 December. With ILE Bay instead: ₹44,735.32, leaving ₹10,264.68. Only Andaman Shores is booked. These changing offers do not reduce the budget allocation until we choose and book.</p></section>
 <section class="section" id="experiences" aria-labelledby="experiences-heading"><div class="section-head"><div><div class="kicker">The priorities</div><h2 id="experiences-heading">Make the experiences count.</h2></div><p>Book the format and inclusions by name. A short complimentary trial snorkel is different from a longer guided reef session.</p></div><div class="activity-list">
 <article class="activity"><div class="activity-num">01</div><div><h3>Havelock scuba · Seahawks Tribe Gate · 14 Dec</h3><p><span class="price">05:30 selected slot · ₹5,900 each unquoted reserve</span> · Confirm the slot means reporting or departure, the underwater duration, five-person staffing/batches, final price, medical screening and hotel pickup/return. The programme advertises 2½–4 hours door to door; keep the morning through roughly 10:00 free for the group. Earlier Tribe Gate snorkelling prices are not scuba prices.</p></div></article>
 <article class="activity"><div class="activity-num">02</div><div><h3>Neil guided snorkelling · 16 Dec</h3><p><span class="price">₹2,000 each unquoted allowance</span> · Provider and reef still to choose. Keep 09:00–12:00 as a provisional morning block, then lunch and rest. Confirm water time, guide, equipment, boat, taxes and transfers. Do not carry over a Havelock snorkelling quote or site.</p></div></article>
@@ -4118,7 +4260,7 @@ body { line-height: 1.65; }
 <div class="booking-group booking-arrival" style="margin-top:28px"><h3>Decide on arrival</h3><p class="fine">Keep these flexible, according to the weather, tide and everyone’s energy.</p><div class="panel"><ol class="check-list">
 <li><div><strong>Extra local cabs and meal places</strong><small>Arrange additional point-to-point rides and choose restaurants locally. The arrival airport pickup, Baratang bus seats and early terminal ride, and major luggage transfers should already be arranged.</small></div><span class="pending">Flexible</span></li>
 <li><div><strong>11 Dec · museum entry and last-entry check</strong><small>The museum is planned around 15:00–16:00 after hotel check-in and a quick lunch. Daytime entry is separate from the evening show; buy entry as the official arrangements permit. Recheck last entry locally and finish by 16:00 until current hours are confirmed. If the flight is delayed, use 17 Dec afternoon after the planned morning ferry as the museum fallback, subject to entry hours; it replaces the other optional museum/beach outing. Keep the evening-show ticket and daytime admission distinct. <a href="https://tourism.andamannicobar.gov.in/etourist/show-details" target="_blank" rel="noopener noreferrer">Official details ↗</a>.</small></div><span class="pending">Entry locally</span></li>
-<li><div><strong>Beaches, Natural Bridge, stars and sunrise</strong><small>Choose free beach visits around weather and rest; check daylight low tide before Natural Bridge on 15/16 Dec. A guide is optional. Neil stargazing after about 22:15 on 15 Dec needs clear weather and confirmed night access/return. Sitapur sunrise on 17 Dec is optional and must preserve 08:30 jetty reporting; arrange any required ride the previous evening.</small></div><span class="pending">Tide / weather</span></li>
+<li><div><strong>Beaches, Natural Bridge, stars and sunrise</strong><small>Choose free beach visits around weather and rest; check daylight low tide before Natural Bridge on 16 Dec. A guide is optional. Neil stargazing after about 22:15 on 15 Dec needs clear weather and confirmed night access/return. Sitapur sunrise on 17 Dec is optional and must preserve 08:30 jetty reporting; arrange any required ride the previous evening.</small></div><span class="pending">Tide / weather</span></li>
 <li><div><strong>Souvenir shopping</strong><small>Choose what to buy at Sagarika or Aberdeen Bazaar, with the group’s ₹5,000 shopping allowance in mind.</small></div><span class="pending">Flexible</span></li>
 <li><div><strong>11 Dec · confirm tomorrow’s DIY Baratang connections</strong><small>Recheck both bus services, original-ID requirements, the 03:30 terminal-reporting plan, the local ferry/boat operation and cave permits. Prepare packed breakfast, water, cash and a day bag. Buy the strait ferry tickets locally on 12 Dec (₹16/person each way; continuous 06:00–20:00 service), then confirm the cave boat’s complete price and return timing. Add Mud Volcano only if back at Nilambur by 11:00 with a jeep ready. The 17 Dec Neil return is not a ready Baratang backup.</small></div><span class="pending">Counter tickets locally</span></li>
 </ol></div></div><p class="fine">Keep major hotels, inter-island ferries, Baratang and the water activities out of the last-minute list. Flights, the three inter-island ferries and Andaman Shores for 11–13 Dec are booked. Other hotels, water activities, local transfers and DIY Baratang tickets remain to arrange.</p></section>
@@ -4179,6 +4321,7 @@ body { line-height: 1.65; }
     const fold = makeFold(group, nodes, `${title.textContent} · ${count} ${group.classList.contains('booking-paid') ? 'items' : 'tasks'}`, 'booking-fold');
     title.classList.add('desktop-booking-heading');
     fold.dataset.bookingNow = String(group.classList.contains('booking-now'));
+    fold.dataset.collapseDesktop = 'true';
   });
   document.querySelectorAll('.booking-fold .check-list > li').forEach(item => {
     const holder = item.querySelector(':scope > div');
@@ -4187,6 +4330,7 @@ body { line-height: 1.65; }
     if (!title || !body) return;
     const detail = document.createElement('details');
     detail.className = 'task-detail';
+    detail.dataset.collapseDesktop = 'true';
     const summary = document.createElement('summary');
     summary.textContent = title.textContent;
     detail.append(summary,body);
@@ -4205,6 +4349,7 @@ body { line-height: 1.65; }
     const full = document.createElement('div');
     [...original.childNodes].forEach(node => full.append(node.cloneNode(true)));
     details.append(summary,full);
+    details.dataset.collapseDesktop = 'true';
     status.append(original,details);
     folds.push(details);
   }
@@ -4270,11 +4415,10 @@ body { line-height: 1.65; }
   }));
   function applyLayout() {
     folds.forEach(fold => { fold.open = (!mobile.matches && fold.dataset.collapseDesktop !== 'true') || fold.dataset.bookingNow === 'true'; });
-    document.querySelector('.desktop-itinerary').inert = mobile.matches;
+    document.querySelector('.desktop-itinerary').inert = true;
     document.querySelectorAll('.desktop-section-content,.stats').forEach(node => { node.inert = mobile.matches; });
-    plan.inert = !mobile.matches;
-    if (mobile.matches) map.before(itinerary);
-    else (document.getElementById('baratang-diy') || document.getElementById('budget')).before(itinerary);
+    plan.inert = false;
+    map.before(itinerary);
     root.classList.add('mobile-ready');
   }
   mobile.addEventListener('change',() => { applyLayout(); showDay(selected); sendMapSelection(); });
