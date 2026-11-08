@@ -10,8 +10,8 @@
     },
     {
       "id": "neil-hotel",
-      "title": "Add the fifth adult and extra bed at Exotica Squares",
-      "detail": "Agoda voucher checked: 15–17 Dec, two King Rooms with Garden View, four adults and zero extra beds. Obtain approval for the fifth adult and final extra charge; ₹3,000 for two nights is provisional.",
+      "title": "At Neil check-in: fifth adult, extra bed and fee",
+      "detail": "Group decision: check the fifth adult/bedding and final charge at Exotica on 15 Dec. Voucher covers four, with zero extra beds; approximately ₹14,000 booking cost recalled by traveller. Keep ₹3,000 provisionally for the extra adult; final availability/fee unconfirmed.",
       "state": "open"
     },
     {
@@ -52,8 +52,8 @@
     },
     {
       "id": "hotels",
-      "title": "Reconcile Neil price, hotel payments and storage",
-      "detail": "Exotica PDF has no price; obtain actual Agoda charge/payment, fifth-adult approval, breakfast and checkout terms. Pibo received ₹2,000: confirm hotel/cab allocation and direct cancellation policy. Arrange luggage storage after Pibo’s 09:00 checkout.",
+      "title": "Reconcile exact hotel payments and storage",
+      "detail": "Exotica booking cost approximately ₹14,000 per traveller; verify exact charge/payment when available. Fifth-adult fee/bedding will be checked at 15 Dec arrival. Pibo received ₹2,000: confirm hotel/cab allocation and direct cancellation policy. Arrange luggage storage after 09:00 checkout.",
       "state": "open"
     }
   ],
@@ -114,7 +114,7 @@
     },
     "15": {
       "headline": "03:30 kayak · report for Makruzz at 12:30",
-      "status": "Kayak/ferry booked · Exotica reserves four; fifth adult pending",
+      "status": "Kayak/ferry booked · Exotica ~₹14k; fifth-adult fee to check at arrival",
       "navigate": "https://www.google.com/maps/dir/?api=1&destination=12.04296%2C92.98322&travelmode=driving&dir_action=navigate",
       "navLabel": "Havelock ferry jetty",
       "take": [
@@ -123,7 +123,7 @@
         "Breakfast plan, early/packed lunch + water"
       ],
       "tonight": "Share tomorrow’s reporting pin, confirm the snorkelling reporting buffer and arrange your own ride.",
-      "protect": "Kayak finish ~05:00 is provisional. Protect recovery, checkout/storage and the two-hour ferry report. Go to sunset only if ready to leave by ~16:00; otherwise use 16 Dec."
+      "protect": "Kayak finish ~05:00 is provisional. Protect recovery, checkout/storage and the two-hour ferry report. Go to sunset only if ready to leave by ~16:00; otherwise use 16 Dec. At Exotica check-in, check the fifth adult, extra bed and final charge; ₹3,000 is only a reserve."
     },
     "16": {
       "headline": "10:00 snorkelling · confirm the reporting buffer",
