@@ -10,15 +10,15 @@
     },
     {
       "id": "neil-hotel",
-      "title": "Book preferred Laxmi Continental · 15–17 Dec · five adults",
-      "detail": "Chosen after cottage photo review on 8 Nov. Two Deluxe Cottages with Balcony, 3+2, with extra mattress; earlier ₹16,506 tax-inclusive room-only quote. Current MMT selection returns unavailable after refreshing dates; breakfast rate also fails. Reconfirm stock, full price and terms before booking. Actual property pin verified; arrange early breakfast, checkout and transfers.",
-      "state": "open"
+      "title": "Hotel Exotica Squares booked · Neil15–17Dec",
+      "detail": "Traveller confirms the booking. Property pin verified; reconcile final room/bedding, meals, total/paid/balance and cancellation from the private booking PDF.",
+      "state": "complete"
     },
     {
       "id": "pb-hotel",
-      "title": "Book Port Blair · 17–18 Dec · five adults",
-      "detail": "Pibo King + Family room for five is ₹4,588.50 at the 8 Nov guest-details check. Not booked. Confirm arrival/room readiness, payment method, bags and airport transfer; save the actual pin after selection.",
-      "state": "open"
+      "title": "Pibo Homestay booked · PortBlair17–18Dec",
+      "detail": "Traveller confirms the booking and direct confirmation email located. Property pin verified; reconcile the voucher’s allocation, meals, costs and checkout, plus bag drop after the ferry.",
+      "state": "complete"
     },
     {
       "id": "cab",
@@ -53,7 +53,7 @@
     {
       "id": "hotels",
       "title": "Verify hotel vouchers, payments and meal/storage terms",
-      "detail": "Read the actual cancellation deadlines, balances and checkout times. ILE Bay pin is corrected; breakfast must cover early activities and ferry mornings.",
+      "detail": "All hotel nights are booked. Read the Exotica Squares and Pibo vouchers for actual room/bedding, meal plan, total/paid/balance, cancellation and checkout. Confirm early breakfast, bag storage and all transfers.",
       "state": "open"
     }
   ],
@@ -114,7 +114,7 @@
     },
     "15": {
       "headline": "03:30 kayak · report for Makruzz at 12:30",
-      "status": "Both booked · ferry sails 14:30",
+      "status": "Kayak, ferry and Hotel Exotica Squares booked",
       "navigate": "https://www.google.com/maps/dir/?api=1&destination=12.04296%2C92.98322&travelmode=driving&dir_action=navigate",
       "navLabel": "Havelock ferry jetty",
       "take": [
@@ -141,7 +141,7 @@
     },
     "17": {
       "headline": "Report at Neil jetty 08:30 · ferry sails 09:30",
-      "status": "Ferry booked · final Port Blair hotel pending",
+      "status": "Ferry and Pibo Homestay booked · voucher/arrival terms to verify",
       "navigate": "https://www.google.com/maps/dir/?api=1&destination=11.83927%2C93.03259&travelmode=driving&dir_action=navigate",
       "navLabel": "Neil ferry jetty",
       "take": [
@@ -163,7 +163,7 @@
         "Check the full Chennai connection"
       ],
       "tonight": "Trip home; check rooms and vehicle for belongings before leaving.",
-      "protect": "The 10:15–10:30 pickup and 10:45–11:00 airport target apply only if the 13:05 flight is confirmed. No sightseeing today."
+      "protect": "The 10:15–10:30 pickup and 10:45–11:00 airport target apply only if the 13:05 flight is confirmed. No sightseeing today. Follow Pibo’s actual checkout deadline and arrange bag storage if it precedes the airport pickup."
     }
   },
   "packing": [
