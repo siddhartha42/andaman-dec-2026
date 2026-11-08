@@ -1,0 +1,282 @@
+{
+  "updated": "2026-11-08",
+  "timezone": "Asia/Kolkata",
+  "gates": [
+    {
+      "id": "flights",
+      "title": "Verify booked flights and Chennai connections",
+      "detail": "Actual tickets must establish arrival/departure, baggage and airline reporting. The saved 12:45 arrival and 13:05 return are assumptions.",
+      "state": "open"
+    },
+    {
+      "id": "neil-hotel",
+      "title": "Book Neil · 15–17 Dec · five adults",
+      "detail": "Choose an acceptable Neil stay: maximum ₹18,513.18 all-in for both nights and all five to preserve the ₹3 lakh trip cap with Pibo, or ₹14,262.18 to preserve the original hotel allowance. Silver Pearl unavailable on MMT/Agoda; Coconhuts and Tango exceed the current cap. Confirm bedding, meals, pin and transfers.",
+      "state": "open"
+    },
+    {
+      "id": "pb-hotel",
+      "title": "Book Port Blair · 17–18 Dec · five adults",
+      "detail": "Pibo King + Family room for five is ₹4,588.50 at the 8 Nov guest-details check. Not booked. Confirm arrival/room readiness, payment method, bags and airport transfer; save the actual pin after selection.",
+      "state": "open"
+    },
+    {
+      "id": "cab",
+      "title": "Confirm Baratang cab · both sights and all waiting",
+      "detail": "Written full quote and reservation for 12 Dec, caves + Mud Volcano, current gate/convoy reporting, ferries, permits and compulsory local charges. Driver only; no separate full-day guide.",
+      "state": "open"
+    },
+    {
+      "id": "forms",
+      "title": "Complete all five snorkelling forms",
+      "detail": "Each person reviews their own medical answers and waiver. Obtain provider confirmation after completion; do not pay a second advance. Private links stay in the group.",
+      "state": "open"
+    },
+    {
+      "id": "pickups",
+      "title": "Confirm activity meeting instructions and returns",
+      "detail": "Seahawks scuba and kayak pickups/launch/finish; Turquoise reporting buffer and return location. Confirm the next-day kayak fits the dive operator’s recovery instructions.",
+      "state": "open"
+    },
+    {
+      "id": "transfers",
+      "title": "Arrange each airport, hotel and jetty transfer",
+      "detail": "Five adults plus driver and bags. Avoid paying twice for included Seahawks pickups. Include Neil snorkelling rides, early checkout, luggage storage and any chosen sunrise outing.",
+      "state": "open"
+    },
+    {
+      "id": "show",
+      "title": "Book the Jail show when 11 Dec opens",
+      "detail": "Check the official portal from 4 Dec; 17:50 Hindi preferred, 18:50 Friday English fallback. Separate museum entry, last entry, show report and rides. Release date/hour is not guaranteed.",
+      "state": "open"
+    },
+    {
+      "id": "hotels",
+      "title": "Verify hotel vouchers, payments and meal/storage terms",
+      "detail": "Read the actual cancellation deadlines, balances and checkout times. ILE Bay pin is corrected; breakfast must cover early activities and ferry mornings.",
+      "state": "open"
+    }
+  ],
+  "days": {
+    "11": {
+      "headline": "Museum 15:00–16:00 · prefer the 17:50 show",
+      "status": "Planning targets · flight and tickets to verify",
+      "navigate": "https://www.google.com/maps/dir/?api=1&destination=11.675%2C92.748&travelmode=driving&dir_action=navigate",
+      "navLabel": "Cellular Jail",
+      "take": [
+        "Original photo ID",
+        "Private flight/hotel copies",
+        "Water + light day bag"
+      ],
+      "tonight": "Early dinner and bed; Baratang wake-up may be around 02:30. Driver must confirm pickup.",
+      "protect": "If arrival is delayed, move the museum to 17 Dec afternoon instead of stacking another outing."
+    },
+    "12": {
+      "headline": "~03:00 cab pickup · confirm with the driver",
+      "status": "Cab quote and reservation pending",
+      "navigate": null,
+      "navLabel": null,
+      "take": [
+        "Original photo ID for all five",
+        "Grippy walking footwear",
+        "Water, snacks + cash for agreed local charges",
+        "Charged phone + small torch"
+      ],
+      "tonight": "Recover from the full day. Pack for the Havelock ferry; agree tomorrow’s jetty pickup.",
+      "protect": "Both caves and Mud Volcano need the written cab scope, all waiting and a practical return convoy. No fixed pickup alert until confirmed."
+    },
+    "13": {
+      "headline": "Report at Haddo 11:30 · ferry sails 12:30",
+      "status": "Ferry booked · follow issued ticket",
+      "navigate": "https://www.google.com/maps/dir/?api=1&destination=11.68353%2C92.71954&travelmode=driving&dir_action=navigate",
+      "navLabel": "Haddo ferry terminal",
+      "take": [
+        "Original ID + private ferry ticket",
+        "All bags",
+        "Early or packed lunch + water"
+      ],
+      "tonight": "Get scuba car/pickup details by 19:00. Arrange an early/packed or late breakfast and sleep early.",
+      "protect": "Radhanagar is the only optional afternoon outing. Skip it if the hotel stop or rest runs late."
+    },
+    "14": {
+      "headline": "05:30 scuba slot · pickup time still to confirm",
+      "status": "Booked · 50 min underwater · morning finish provisional",
+      "navigate": null,
+      "navLabel": null,
+      "take": [
+        "Operator-required ID/forms",
+        "Swimwear, towel + dry change",
+        "Dry bag + water",
+        "Confirmed pickup instructions"
+      ],
+      "tonight": "Pack ferry bags before the early kayak. Confirm the 03:30 programme pickup/return and breakfast plan.",
+      "protect": "Reserve the morning to about 10:00 provisionally. Ask Seahawks about recovery and the following morning’s kayaking; office pin is not the confirmed meeting point."
+    },
+    "15": {
+      "headline": "03:30 kayak · report for Makruzz at 12:30",
+      "status": "Both booked · ferry sails 14:30",
+      "navigate": "https://www.google.com/maps/dir/?api=1&destination=12.04296%2C92.98322&travelmode=driving&dir_action=navigate",
+      "navLabel": "Havelock ferry jetty",
+      "take": [
+        "Kayak kit + confirmed pickup details",
+        "Packed ferry bags + private ticket",
+        "Breakfast plan, early/packed lunch + water"
+      ],
+      "tonight": "Share tomorrow’s reporting pin, confirm the snorkelling reporting buffer and arrange your own ride.",
+      "protect": "Kayak finish ~05:00 is provisional. Protect recovery, checkout/storage and the two-hour ferry report. Go to sunset only if ready to leave by ~16:00; otherwise use 16 Dec."
+    },
+    "16": {
+      "headline": "10:00 snorkelling · confirm the reporting buffer",
+      "status": "Advance paid · individual forms pending",
+      "navigate": "https://www.google.com/maps/dir/?api=1&destination=11.8360284%2C93.0318112&travelmode=driving&dir_action=navigate",
+      "navLabel": "Exact WhatsApp reporting pin",
+      "take": [
+        "Completed personal participant form",
+        "Swimwear, towel + dry change",
+        "Water, sun protection + dry bag",
+        "Agreed payment method for ₹8,673 group balance"
+      ],
+      "tonight": "Pack before bed. Confirm early breakfast, checkout and the 08:30 Neil jetty report; sunrise stays optional.",
+      "protect": "Bridge only after a local daylight low-tide/access check and if back for breakfast by ~08:15. Keep 09:15–12:30 clear for the snorkelling programme; actual operator instructions take priority."
+    },
+    "17": {
+      "headline": "Report at Neil jetty 08:30 · ferry sails 09:30",
+      "status": "Ferry booked · final Port Blair hotel pending",
+      "navigate": "https://www.google.com/maps/dir/?api=1&destination=11.83927%2C93.03259&travelmode=driving&dir_action=navigate",
+      "navLabel": "Neil ferry jetty",
+      "take": [
+        "All bags + original ID",
+        "Private ferry ticket",
+        "Early breakfast or takeaway plan"
+      ],
+      "tonight": "Confirm the actual flight and connection, airport pickup time, airline baggage rules and all packing.",
+      "protect": "Skip Sitapur if it threatens breakfast, checkout or the ferry report. After arrival, choose one outing; Cellular Jail is a fallback only if missed on 11 Dec."
+    },
+    "18": {
+      "headline": "Airport timing waits for the actual flight ticket",
+      "status": "13:05 departure is unverified",
+      "navigate": "https://www.google.com/maps/dir/?api=1&destination=11.651885%2C92.733522&travelmode=driving&dir_action=navigate",
+      "navLabel": "Airport terminal area",
+      "take": [
+        "Original ID + private flight itinerary",
+        "All bags, chargers + valuables",
+        "Check the full Chennai connection"
+      ],
+      "tonight": "Trip home; check rooms and vehicle for belongings before leaving.",
+      "protect": "The 10:15–10:30 pickup and 10:45–11:00 airport target apply only if the 13:05 flight is confirmed. No sightseeing today."
+    }
+  },
+  "packing": [
+    {
+      "id": "documents",
+      "title": "Documents & money",
+      "items": [
+        {
+          "id": "id",
+          "label": "Original government photo ID for every adult"
+        },
+        {
+          "id": "tickets",
+          "label": "Save private flight/ferry/hotel/activity confirmations on each phone"
+        },
+        {
+          "id": "maps",
+          "label": "Save reporting pins and a local map before weak-signal journeys"
+        },
+        {
+          "id": "payments",
+          "label": "Agree cash/UPI/card coverage for balances and local charges; advances are already included"
+        }
+      ]
+    },
+    {
+      "id": "water",
+      "title": "Water activities",
+      "items": [
+        {
+          "id": "swim",
+          "label": "Swimwear or rash guard, towel and a dry change"
+        },
+        {
+          "id": "drybag",
+          "label": "Dry bag / splash protection for phone and essentials"
+        },
+        {
+          "id": "sun",
+          "label": "Water bottle, hat and sun protection permitted by the operator"
+        },
+        {
+          "id": "forms",
+          "label": "Complete your own required forms and follow operator screening/instructions"
+        }
+      ]
+    },
+    {
+      "id": "land",
+      "title": "Walking & everyday",
+      "items": [
+        {
+          "id": "shoes",
+          "label": "Grippy walking footwear for caves and rocky Bridge access"
+        },
+        {
+          "id": "clothes",
+          "label": "Light clothes, spare socks and a light rain layer"
+        },
+        {
+          "id": "personal",
+          "label": "Personal medicines as prescribed, toiletries and glasses"
+        },
+        {
+          "id": "torch",
+          "label": "Small torch for the cave outing and pre-dawn starts"
+        }
+      ]
+    },
+    {
+      "id": "electronics",
+      "title": "Phones & charging",
+      "items": [
+        {
+          "id": "phone",
+          "label": "Phone, cables, plug chargers and power bank"
+        },
+        {
+          "id": "baggage",
+          "label": "Check the booked airline’s battery and baggage rules"
+        },
+        {
+          "id": "links",
+          "label": "Open your day links and check Google Maps before leaving the hotel"
+        }
+      ]
+    }
+  ],
+  "reminders": {
+    "status": "draft_not_activated",
+    "activation": "Only after all bookings and critical details are final AND the user enters the preparation phase. No messages or notifications now.",
+    "audience": "Team andaman group plus each member individually; verify the then-current group roster privately before sending.",
+    "noisePolicy": "Only useful alerts. Bundle preparation tasks, avoid duplicate reminders, no alerts for optional sightseeing; notify again only for a material time/location change or unresolved essential action.",
+    "preparation": [
+      {
+        "when": "About 7 days before departure",
+        "what": "One combined documents, forms, balances, packing and transfer checklist; include the single itinerary link."
+      },
+      {
+        "when": "About 2 days before departure",
+        "what": "One final essentials check; omit tasks already completed."
+      }
+    ],
+    "trip": [
+      {
+        "when": "One next-day briefing in the evening",
+        "what": "Tomorrow’s first essential time, pickup/report pin, what to carry and what needs confirmation. Avoid separate alerts for each optional stop."
+      },
+      {
+        "when": "Before an essential departure or reporting deadline",
+        "what": "One practical leave-now alert based on the confirmed pickup/route plus buffer. Suppress it when an arranged driver pickup already covers the same action."
+      }
+    ],
+    "channels": "A static website cannot send scheduled WhatsApp notifications. Calendar/reminder alerts and any WhatsApp delivery must be configured and tested in the preparation phase; delivery is not active or guaranteed by this plan."
+  }
+}
