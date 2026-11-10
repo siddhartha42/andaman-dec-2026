@@ -1,18 +1,13 @@
 {
-  "updated": "2026-11-08",
+  "updated": "2026-11-11",
   "timezone": "Asia/Kolkata",
   "gates": [
-    {
-      "id": "flights",
-      "title": "Verify booked flights and Chennai connections",
-      "detail": "Actual tickets must establish arrival/departure, baggage and airline reporting. The saved 12:45 arrival and 13:05 return are assumptions.",
-      "state": "open"
-    },
     {
       "id": "neil-hotel",
       "title": "At Neil check-in: fifth adult, extra bed and fee",
       "detail": "Group decision: check the fifth adult/bedding and final charge at Exotica on 15 Dec. Voucher covers four, with zero extra beds; approximately ₹14,000 booking cost recalled by traveller. Keep ₹3,000 provisionally for the extra adult; final availability/fee unconfirmed.",
-      "state": "open"
+      "state": "open",
+      "phase": "arrival"
     },
     {
       "id": "pb-hotel",
@@ -22,39 +17,45 @@
     },
     {
       "id": "cab",
-      "title": "Confirm Baratang cab · both sights and all waiting",
-      "detail": "Pibo quotes ₹4,000 cab-only for 11 Dec airport-to-hotel pickup plus 12 Dec Baratang; traveller says arranged. Confirm vehicle, both caves + Mud Volcano, waiting, gate/convoy reporting, island crossing, boats/jeeps, permits and local charges. Driver only; no separate full-day guide.",
-      "state": "open"
+      "title": "To-do on 11 Dec: Baratang driver and local charges",
+      "detail": "Cab arranged at ₹4,000, including the first airport pickup per provider. Latest Team Andaman update: cave/mangrove boat ₹1,200 each; Middle Strait ferry ₹15–20 each; Mud Volcano optional, with a reported ₹800 jeep charge. Confirm pickup/driver, convoy, waiting and what each local fare covers. Keep ₹13,000 reserve until settled.",
+      "state": "open",
+      "phase": "arrival"
     },
     {
       "id": "forms",
-      "title": "Complete all five snorkelling forms",
-      "detail": "Each person reviews their own medical answers and waiver. Obtain provider confirmation after completion; do not pay a second advance. Private links stay in the group.",
-      "state": "open"
+      "title": "One snorkelling participant slot still blank",
+      "detail": "Direct booking page checked: four names saved, Diver 5 blank; booking still provisional. The remaining traveller has been sent the private form link. Await submission; no new payment or repeated group reminders.",
+      "state": "open",
+      "phase": "before_departure"
     },
     {
       "id": "pickups",
-      "title": "Confirm activity meeting instructions and returns",
-      "detail": "Seahawks scuba and kayak pickups/launch/finish; Turquoise reporting buffer and return location. Confirm the next-day kayak fits the dive operator’s recovery instructions.",
-      "state": "open"
+      "title": "On island arrival: arrange the next activity pickup",
+      "detail": "On 13 Dec at ILE Bay, confirm the 14 Dec early scuba pickup; on 14 Dec, confirm the 15 Dec pre-dawn kayak pickup/return. On Neil arrival, arrange the 16 Dec snorkelling ride and reporting buffer. Final driver details may arrive the previous evening.",
+      "state": "open",
+      "phase": "arrival"
     },
     {
       "id": "transfers",
-      "title": "Arrange each airport, hotel and jetty transfer",
-      "detail": "Five adults plus driver and bags. Avoid paying twice for included Seahawks pickups. Include Neil snorkelling rides, early checkout, luggage storage and any chosen sunrise outing.",
-      "state": "open"
+      "title": "On arrival: arrange local rides and ferry transfers",
+      "detail": "Arrange rides locally for five adults plus bags. First airport pickup is in the cab package. Arrange each early jetty ride the previous evening, especially 17 Dec 08:30 reporting; avoid duplicate charges for activity transfers already included. Ask Pibo on 17 Dec to store bags after 09:00 checkout on 18 Dec.",
+      "state": "open",
+      "phase": "arrival"
     },
     {
       "id": "show",
-      "title": "Book the Jail show when 11 Dec opens",
-      "detail": "Check the official portal from 4 Dec; 17:50 Hindi preferred, 18:50 Friday English fallback. Separate museum entry, last entry, show report and rides. Release date/hour is not guaranteed.",
-      "state": "open"
+      "title": "4 Dec 09:00 IST: scheduled Jail-show booking check",
+      "detail": "One reminder/check is scheduled for five adults on 11 Dec: prefer 17:50 Hindi, 18:50 English fallback. Check the official release window and reporting instructions, then complete the booking. Museum entry is separate; no tickets have been purchased.",
+      "state": "open",
+      "phase": "scheduled"
     },
     {
       "id": "hotels",
-      "title": "Reconcile exact hotel payments and storage",
-      "detail": "Exotica booking cost approximately ₹14,000 per traveller; verify exact charge/payment when available. Fifth-adult fee/bedding will be checked at 15 Dec arrival. Pibo received ₹2,000: confirm hotel/cab allocation and direct cancellation policy. Arrange luggage storage after 09:00 checkout.",
-      "state": "open"
+      "title": "During the stay: settle remaining payments as due",
+      "detail": "Per traveller decision, handle balances at the hotel/operator when due, and check the final statement then. Recorded water-activity balances total ₹41,173; do not pay the advances twice. Reconcile Pibo’s ₹2,000 credit and Exotica’s actual charge at settlement, with no pre-trip reconciliation task.",
+      "state": "open",
+      "phase": "during_trip"
     }
   ],
   "days": {
@@ -68,7 +69,7 @@
         "Private flight/hotel copies",
         "Water + light day bag"
       ],
-      "tonight": "Early dinner and bed; Baratang wake-up may be around 02:30. Driver must confirm pickup.",
+      "tonight": "Confirm tomorrow’s Baratang driver, pickup/convoy, cave boat/ferry charges and whether to add the optional Mud Volcano jeep. Early dinner and bed.",
       "protect": "If arrival is delayed, move the museum to 17 Dec afternoon instead of stacking another outing."
     },
     "12": {
@@ -83,7 +84,7 @@
         "Charged phone + small torch"
       ],
       "tonight": "Recover from the full day. Pack for the Havelock ferry; agree tomorrow’s jetty pickup.",
-      "protect": "Both caves and Mud Volcano need the written cab scope, all waiting and a practical return convoy. No fixed pickup alert until confirmed."
+      "protect": "Caves are planned; Mud Volcano is optional on the day. Confirm the return convoy, waiting and reported local fares before leaving. Main luggage stays at Andaman Shores."
     },
     "13": {
       "headline": "Report at Haddo 11:30 · ferry sails 12:30",
@@ -95,7 +96,7 @@
         "All bags",
         "Early or packed lunch + water"
       ],
-      "tonight": "Get scuba car/pickup details by 19:00. Arrange an early/packed or late breakfast and sleep early.",
+      "tonight": "On island arrival, arrange tomorrow’s scuba pickup and breakfast plan. Exact car details are expected by the previous evening; sleep early.",
       "protect": "Radhanagar is the only optional afternoon outing. Skip it if the hotel stop or rest runs late."
     },
     "14": {
@@ -127,7 +128,7 @@
     },
     "16": {
       "headline": "10:00 snorkelling · confirm the reporting buffer",
-      "status": "Advance paid · individual forms pending",
+      "status": "Advance paid · four names saved, one participant slot blank",
       "navigate": "https://www.google.com/maps/dir/?api=1&destination=11.8360284%2C93.0318112&travelmode=driving&dir_action=navigate",
       "navLabel": "Exact WhatsApp reporting pin",
       "take": [
@@ -254,7 +255,7 @@
   ],
   "reminders": {
     "status": "draft_not_activated",
-    "activation": "Only after all bookings and critical details are final AND the user enters the preparation phase. No messages or notifications now.",
+    "activation": "General preparation and trip reminders remain inactive until preparation starts. The explicitly requested one-time Cellular Jail booking check is separately scheduled for 4 Dec at 09:00 IST.",
     "audience": "Team andaman group plus each member individually; verify the then-current group roster privately before sending.",
     "noisePolicy": "Only useful alerts. Bundle preparation tasks, avoid duplicate reminders, no alerts for optional sightseeing; notify again only for a material time/location change or unresolved essential action.",
     "preparation": [
@@ -277,6 +278,22 @@
         "what": "One practical leave-now alert based on the confirmed pickup/route plus buffer. Suppress it when an arranged driver pickup already covers the same action."
       }
     ],
-    "channels": "A static website cannot send scheduled WhatsApp notifications. Calendar/reminder alerts and any WhatsApp delivery must be configured and tested in the preparation phase; delivery is not active or guaranteed by this plan."
-  }
+    "channels": "A static website cannot send scheduled WhatsApp notifications. Calendar/reminder alerts and any WhatsApp delivery must be configured and tested in the preparation phase; delivery is not active or guaranteed by this plan.",
+    "scheduledExceptions": [
+      {
+        "name": "Cellular Jail show booking check",
+        "date": "2026-12-04",
+        "time": "09:00",
+        "timezone": "Asia/Kolkata",
+        "repeat": "once",
+        "purpose": "Check and remind to book five adults for 11 Dec; no payment made by the reminder."
+      }
+    ]
+  },
+  "waitingForUser": [
+    {
+      "id": "flights",
+      "detail": "No ticket verification task now. Traveller will notify when flight tickets are shared in Team Andaman; displayed flight times remain assumptions until then."
+    }
+  ]
 }
