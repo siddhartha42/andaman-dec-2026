@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14",
+  "updated": "2026-11-15",
   "timezone": "Asia/Kolkata",
   "gates": [
     {
@@ -12,7 +12,7 @@
     {
       "id": "neil-hotel",
       "title": "At Neil check-in: fifth adult, extra bed and fee",
-      "detail": "Group decision: check the fifth adult/bedding and final charge at Exotica on 15 Dec. Voucher covers four, with zero extra beds; approximately ₹14,000 booking cost recalled by traveller. Keep ₹3,000 provisionally for the extra adult; final availability/fee unconfirmed.",
+      "detail": "Group decision: check the fifth adult/bedding and final charge at Exotica on 15 Dec. Voucher covers four, with zero extra beds; exact booking cost ₹14,450 confirmed by the traveller on 15 Nov. Keep ₹3,000 provisionally for the extra adult; final availability/fee unconfirmed.",
       "state": "open",
       "phase": "arrival"
     },
@@ -122,7 +122,7 @@
     },
     "15": {
       "headline": "03:30 kayak · report for Makruzz at 12:30",
-      "status": "Kayak/ferry booked · Exotica ~₹14k; fifth-adult fee to check at arrival",
+      "status": "Kayak/ferry booked · Exotica ₹14,450; fifth-adult fee to check at arrival",
       "navigate": "https://www.google.com/maps/dir/?api=1&destination=12.04296%2C92.98322&travelmode=driving&dir_action=navigate",
       "navLabel": "Havelock ferry jetty",
       "take": [
@@ -185,7 +185,7 @@
         },
         {
           "id": "tickets",
-          "label": "Save private flight/ferry/hotel/activity confirmations on each phone"
+          "label": "Open the trip document wallet; use Save for offline before weak-signal journeys"
         },
         {
           "id": "maps",
