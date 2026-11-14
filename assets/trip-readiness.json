@@ -1,7 +1,14 @@
 {
-  "updated": "2026-11-11",
+  "updated": "2026-11-14",
   "timezone": "Asia/Kolkata",
   "gates": [
+    {
+      "id": "flights",
+      "title": "Flights booked · schedule checked 14 Nov",
+      "detail": "11 Dec BLR07:10–MAA08:15, MAA10:15–IXZ12:25. 18 Dec IXZ13:05–MAA15:20, MAA16:20–BLR17:25. Two travellers on checked PDF; traveller confirms other three use these flights. Return Chennai T1 connection is one hour.",
+      "state": "complete",
+      "phase": "booked"
+    },
     {
       "id": "neil-hotel",
       "title": "At Neil check-in: fifth adult, extra bed and fee",
@@ -17,15 +24,15 @@
     },
     {
       "id": "cab",
-      "title": "To-do on 11 Dec: Baratang driver and local charges",
-      "detail": "Cab arranged at ₹4,000, including the first airport pickup per provider. Latest Team Andaman update: cave/mangrove boat ₹1,200 each; Middle Strait ferry ₹15–20 each; Mud Volcano optional, with a reported ₹800 jeep charge. Confirm pickup/driver, convoy, waiting and what each local fare covers. Keep ₹13,000 reserve until settled.",
-      "state": "open",
-      "phase": "arrival"
+      "title": "Pibo Baratang package confirmed · ₹10,000 for five",
+      "detail": "Hotel explicitly confirms airport pickup to Andaman Shores, Baratang cab ₹4,000 and five limestone-cave speedboat tickets ₹6,000. ₹1,000 token requested; receipt/payment not observed. Driver/pickup details still to come. Small unitemised local fees and optional Mud Volcano remain separate; ₹13,000 reserve retained.",
+      "state": "complete",
+      "phase": "booked"
     },
     {
       "id": "forms",
       "title": "One snorkelling participant slot still blank",
-      "detail": "Direct booking page checked: four names saved, Diver 5 blank; booking still provisional. The remaining traveller has been sent the private form link. Await submission; no new payment or repeated group reminders.",
+      "detail": "Direct booking page rechecked 14 Nov: four names saved, Diver 5 blank; booking still provisional. Private follow-up was sent on 11 Nov; await the remaining submission. No medical answers changed or second deposit paid.",
       "state": "open",
       "phase": "before_departure"
     },
@@ -60,8 +67,8 @@
   ],
   "days": {
     "11": {
-      "headline": "Museum 15:00–16:00 · prefer the 17:50 show",
-      "status": "Planning targets · flight and tickets to verify",
+      "headline": "12:25 ticketed arrival · museum 15:00–16:00 · show still to book",
+      "status": "Flight schedule checked · first airport pickup included",
       "navigate": "https://www.google.com/maps/dir/?api=1&destination=11.675%2C92.748&travelmode=driving&dir_action=navigate",
       "navLabel": "Cellular Jail",
       "take": [
@@ -69,12 +76,12 @@
         "Private flight/hotel copies",
         "Water + light day bag"
       ],
-      "tonight": "Confirm tomorrow’s Baratang driver, pickup/convoy, cave boat/ferry charges and whether to add the optional Mud Volcano jeep. Early dinner and bed.",
+      "tonight": "Coordinate tomorrow’s confirmed Baratang package: driver contact, pickup/convoy, waiting, local fees and optional Mud Volcano. Early dinner and bed.",
       "protect": "If arrival is delayed, move the museum to 17 Dec afternoon instead of stacking another outing."
     },
     "12": {
       "headline": "~03:00 cab pickup · confirm with the driver",
-      "status": "Cab arranged per traveller · ₹4,000 package cab-only; scope/pickup pending",
+      "status": "Pibo confirms ₹10,000 cab + five cave-boat tickets; ₹1,000 token requested",
       "navigate": null,
       "navLabel": null,
       "take": [
@@ -128,7 +135,7 @@
     },
     "16": {
       "headline": "10:00 snorkelling · confirm the reporting buffer",
-      "status": "Advance paid · four names saved, one participant slot blank",
+      "status": "Rechecked 14 Nov: four names saved, one participant slot blank",
       "navigate": "https://www.google.com/maps/dir/?api=1&destination=11.8360284%2C93.0318112&travelmode=driving&dir_action=navigate",
       "navLabel": "Exact WhatsApp reporting pin",
       "take": [
@@ -150,21 +157,21 @@
         "Private ferry ticket",
         "Early breakfast or takeaway plan"
       ],
-      "tonight": "Pack for 09:00 Pibo checkout. Arrange luggage storage until pickup; verify flight/Chennai connection, airport ride and baggage rules.",
+      "tonight": "Pack for 09:00 Pibo checkout. Arrange bag storage and the airport car for the booked 13:05 departure; keep the one-hour Chennai T1 connection in mind.",
       "protect": "Skip Sitapur if it threatens breakfast, checkout or the ferry report. After arrival, choose one outing; Cellular Jail is a fallback only if missed on 11 Dec."
     },
     "18": {
-      "headline": "Pibo checkout 09:00 · airport ride waits for flight verification",
-      "status": "13:05 departure is unverified",
+      "headline": "Pibo checkout 09:00 · airport target 10:45–11:00 · flight 13:05",
+      "status": "Return flight checked · Chennai connection 15:20–16:20",
       "navigate": "https://www.google.com/maps/dir/?api=1&destination=11.651885%2C92.733522&travelmode=driving&dir_action=navigate",
       "navLabel": "Airport terminal area",
       "take": [
         "Original ID + private flight itinerary",
         "All bags, chargers + valuables",
-        "Check the full Chennai connection"
+        "Both boarding passes; one-hour Chennai T1 transfer"
       ],
       "tonight": "Trip home; check rooms and vehicle for belongings before leaving.",
-      "protect": "Pack and settle before 09:00 checkout; arrange luggage storage until airport pickup. The 10:15–10:30 ride / 10:45–11:00 airport target applies only if the 13:05 flight is confirmed. No sightseeing today."
+      "protect": "Release rooms by 09:00 and arrange luggage storage until the 10:15–10:30 pickup target. Aim for the airport 10:45–11:00. Flights: IXZ13:05–MAA15:20, MAA16:20–BLR17:25. No sightseeing today."
     }
   },
   "packing": [
@@ -290,10 +297,5 @@
       }
     ]
   },
-  "waitingForUser": [
-    {
-      "id": "flights",
-      "detail": "No ticket verification task now. Traveller will notify when flight tickets are shared in Team Andaman; displayed flight times remain assumptions until then."
-    }
-  ]
+  "waitingForUser": []
 }
