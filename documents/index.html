@@ -9,29 +9,31 @@
   <meta name="theme-color" content="#153e44">
   <title>Travel documents · Andaman 2026</title>
   <link rel="stylesheet" href="wallet.css">
-  <script src="wallet.js" defer></script>
+  <link rel="stylesheet" href="../assets/navigation.css">
+  <script src="wallet.js?v=20261115-nav1" defer></script>
+  <script src="../assets/navigation.js" defer></script>
 </head>
-<body>
+<body class="wallet-page">
   <a class="skip" href="#main">Skip to documents</a>
   <header><div class="shell top"><a class="brand" href="../">Andaman <span>/ 2026</span></a><a href="../#documents">← Trip plan</a></div></header>
   <main id="main" class="shell">
-    <div class="intro"><p class="eyebrow">11–18 December · one place for the essentials</p><h1>Travel documents.</h1><p>Open the original ticket or confirmation when you need it, from any phone.</p></div>
+    <div class="intro"><p class="eyebrow">11–18 December · trip wallet</p><h1>Travel documents.</h1><p>Tickets and confirmations, ready to show.</p></div>
     <section id="locked" class="unlock" aria-labelledby="unlock-title">
-      <div class="lock-icon" aria-hidden="true">↗</div><h2 id="unlock-title">Your group’s document wallet</h2>
-      <p>Enter the shared passphrase to see passenger details, tickets and booking confirmations.</p>
+      <div class="lock-icon" aria-hidden="true">↗</div><h2 id="unlock-title">Unlock your documents</h2>
+      <p>Enter our shared trip passphrase.</p>
       <form id="unlock-form"><label for="passphrase">Trip passphrase</label><div class="password-row"><input id="passphrase" type="password" autocomplete="current-password" required spellcheck="false" autocapitalize="none" aria-describedby="unlock-message"><button id="unlock-button" type="submit">Unlock documents</button></div><p id="unlock-message" class="message" role="status" aria-live="polite"></p></form>
-      <p class="fine">Documents are encrypted. The passphrase and unlocked files are kept only in this open page, until you lock it or close the tab.</p>
+      <p class="fine">Encrypted files unlock in this tab only.</p>
     </section>
     <section id="wallet" hidden aria-label="Unlocked travel documents">
       <div class="wallet-toolbar"><div><strong id="document-count"></strong><p id="updated" class="fine"></p></div><button id="lock-button" class="secondary" type="button">Lock documents</button></div>
-      <p class="notice">Use “Open original” to show the full ticket, barcode or voucher. A saved chat or booking summary is labelled separately and does not replace an issued ticket. Keep original photo ID with you.</p>
-      <div class="filters"><label for="document-search">Find a document<input id="document-search" type="search" placeholder="Hotel, ferry, activity…" autocomplete="off"></label><label for="category">Category<select id="category"><option value="all">All documents</option><option value="flight">Flights</option><option value="ferry">Ferries</option><option value="hotel">Hotels</option><option value="activity">Activities</option><option value="transfer">Cab & transfers</option></select></label></div>
+      <p class="notice">Show the original PDF at check-in. Saved chats/emails are labelled separately. Carry original photo ID.</p>
+      <div class="filters"><div><label for="document-search">Search documents</label><input id="document-search" type="search" placeholder="Hotel, ferry, activity…" autocomplete="off"></div><div><label for="category">Type</label><select id="category"><option value="all">All documents</option><option value="flight">Flights</option><option value="ferry">Ferries</option><option value="hotel">Hotels</option><option value="activity">Activities</option><option value="transfer">Cab &amp; transfers</option></select></div></div>
       <div id="document-list" class="document-list"></div><p id="empty" hidden>No matching documents. Try another search or category.</p>
-      <section class="missing" aria-labelledby="missing-title"><h2 id="missing-title">Still to add</h2><p class="fine">This list tracks missing documents, not missing reservations.</p><ul id="missing-list"></ul></section>
+      <section class="missing" aria-labelledby="missing-title"><h2 id="missing-title">Still to add</h2><p class="fine">Files to add when available.</p><ul id="missing-list"></ul></section>
     </section>
-    <section class="offline" aria-labelledby="offline-title"><div><h2 id="offline-title">Ready for a weak signal</h2><p>Save the encrypted wallet once in this browser. Then reopen this page and use the same passphrase without downloading each ticket separately.</p><p class="fine">Offline access is specific to this browser and can be removed when its website data is cleared. Save again after new documents are added.</p></div><div><button id="offline-button" type="button" class="secondary">Save for offline</button><p id="offline-status" class="message" role="status" aria-live="polite"></p></div></section>
+    <section class="offline" aria-labelledby="offline-title"><div><h2 id="offline-title">Use offline</h2><p>Save once in this browser, then reopen and unlock without a connection.</p><p class="fine">Save again after updates. Clearing website data removes the offline copy.</p></div><div><button id="offline-button" type="button" class="secondary">Save for offline</button><p id="offline-status" class="message" role="status" aria-live="polite"></p></div></section>
     <noscript><p class="notice">Enable JavaScript to unlock these encrypted documents.</p></noscript>
   </main>
-  <footer class="shell">Andaman · December 2026 <span>Share the passphrase only with the trip group.</span></footer>
+  <footer class="shell">Andaman · December 2026 <span>Keep the passphrase within the group.</span></footer>
 </body>
 </html>

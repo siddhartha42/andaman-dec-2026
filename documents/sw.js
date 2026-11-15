@@ -5,7 +5,8 @@ self.addEventListener('activate',event=>{event.waitUntil(self.clients.claim());}
 self.addEventListener('fetch',event=>{
   if(event.request.method!=='GET')return;
   const url=new URL(event.request.url),scope=new URL(self.registration.scope);
-  if(url.origin!==scope.origin||!url.pathname.startsWith(scope.pathname))return;
+  const shared=['../assets/navigation.css','../assets/navigation.js'].map(path=>new URL(path,scope).href);
+  if(url.origin!==scope.origin||(!url.pathname.startsWith(scope.pathname)&&!shared.includes(url.origin+url.pathname)))return;
   event.respondWith((async()=>{
     try{return await fetch(event.request);}
     catch(error){

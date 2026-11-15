@@ -5,6 +5,8 @@
   let documents = [], urls = [], settings;
   const from64 = text => Uint8Array.from(atob(text), c => c.charCodeAt(0));
   const requestedCategory = new URLSearchParams(location.search).get('category');
+  const requestedSearch = (new URLSearchParams(location.search).get('q') || '').slice(0,200);
+  $('document-search').value=requestedSearch;
   if (Object.hasOwn(categories, requestedCategory)) $('category').value=requestedCategory;
   const loadSettings = () => settings ? Promise.resolve(settings) : fetch('wallet.json', {cache:'no-store'}).then(r => {if (!r.ok) throw new Error('The wallet is unavailable. Please try again when connected.');return r.json();}).then(value => settings=value);
   const setMessage = (id, text, error=false) => {$(id).textContent=text;$(id).classList.toggle('error',error);};
@@ -19,15 +21,15 @@
       const actions=el('div','document-actions'), open=el('a','',d.original ? 'Open original ↗' : 'Open saved confirmation ↗'), download=el('a','secondary','Download');
       open.href=d.url;open.target='_blank';open.rel='noopener noreferrer';open.setAttribute('aria-label',`${open.textContent}: ${d.title}`);
       download.href=d.url;download.download=d.filename;download.setAttribute('aria-label',`Download ${d.title}`);
-      actions.append(open,download);card.append(actions,el('div','file-info',`${d.mime==='application/pdf'?'PDF':d.mime.startsWith('image/')?'Image':'Text'} · ${Math.max(1,Math.round(d.bytes/1024))} KB${d.pages ? ` · ${d.pages} pages` : ''}`));list.append(card);
+      actions.append(open,download);card.append(actions,el('div','file-info',`${d.mime==='application/pdf'?'PDF':d.mime.startsWith('image/')?'Image':'Text'} · ${Math.max(1,Math.round(d.bytes/1024))} KB${d.pages ? ` · ${d.pages} ${d.pages===1?'page':'pages'}` : ''}`));list.append(card);
     });
     $('empty').hidden=shown.length>0;
   }
-  function lock() {
+  function lock(focus=true) {
     $('document-list').replaceChildren();$('missing-list').replaceChildren();
     urls.forEach(url=>URL.revokeObjectURL(url));urls=[];documents=[];
     $('wallet').hidden=true;$('locked').hidden=false;$('passphrase').value='';
-    $('document-search').value='';$('category').value='all';setMessage('unlock-message','');$('passphrase').focus();
+    $('document-search').value=requestedSearch;$('category').value=Object.hasOwn(categories,requestedCategory)?requestedCategory:'all';setMessage('unlock-message','');if(focus)$('passphrase').focus();
   }
   $('unlock-form').addEventListener('submit',async event => {
     event.preventDefault();const button=$('unlock-button');button.disabled=true;setMessage('unlock-message','Unlocking your documents…');
@@ -55,20 +57,20 @@
     }catch(error){opened.forEach(url=>URL.revokeObjectURL(url));documents=[];setMessage('unlock-message',error.message||'Unable to unlock. Please try again.',true);}
     finally{payload=null;button.disabled=false;}
   });
-  $('lock-button').addEventListener('click',lock);
+  $('lock-button').addEventListener('click',()=>lock());
   $('document-search').addEventListener('input',render);$('category').addEventListener('change',render);
-  addEventListener('pagehide',()=>{urls.forEach(url=>URL.revokeObjectURL(url));});
+  addEventListener('pagehide',()=>lock(false));
   $('offline-button').addEventListener('click',async()=>{
     const button=$('offline-button');button.disabled=true;setMessage('offline-status','Saving the encrypted wallet…');
     try{
       if(!('serviceWorker' in navigator)||!('caches' in globalThis))throw new Error('Offline saving is unavailable in this browser. You can still download individual documents after unlocking.');
       const meta=await loadSettings(),cache=await caches.open('andaman-document-wallet-v1');
-      const paths=['index.html','wallet.css','wallet.js','wallet.json',meta.file];
+      const paths=['index.html','wallet.css','wallet.js','wallet.json',meta.file,'../assets/navigation.css','../assets/navigation.js'];
       const responses=await Promise.all(paths.map(async path=>{const url=new URL(path,location.href);const response=await fetch(url,{cache:'reload'});if(!response.ok)throw new Error('Could not save all files. Reconnect and try again.');return {url:url.href,response};}));
       await Promise.all(responses.map(({url,response})=>cache.put(url,response)));
       await navigator.serviceWorker.register('sw.js',{scope:'./'});await navigator.serviceWorker.ready;
       if(navigator.storage?.persist)await navigator.storage.persist().catch(()=>false);
-      setMessage('offline-status','Saved in this browser. Reopen this page offline and unlock with the same passphrase.');
+      setMessage('offline-status','Saved. Reopen this page offline with the same passphrase.');
     }catch(error){setMessage('offline-status',error.message||'Offline saving failed. Please try again.',true);}
     finally{button.disabled=false;}
   });

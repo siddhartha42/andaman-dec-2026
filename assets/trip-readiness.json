@@ -4,63 +4,63 @@
   "gates": [
     {
       "id": "flights",
-      "title": "Flights booked · schedule checked 14 Nov",
-      "detail": "11 Dec BLR07:10–MAA08:15, MAA10:15–IXZ12:25. 18 Dec IXZ13:05–MAA15:20, MAA16:20–BLR17:25. Two travellers on checked PDF; traveller confirms other three use these flights. Return Chennai T1 connection is one hour.",
+      "title": "Flights booked",
+      "detail": "11 Dec arrival 12:25; 18 Dec departure 13:05 via Chennai. Return T1 connection: one hour. Shared PDF covers two; all five use the same services per traveller confirmation.",
       "state": "complete",
       "phase": "booked"
     },
     {
       "id": "neil-hotel",
-      "title": "At Neil check-in: fifth adult, extra bed and fee",
-      "detail": "Group decision: check the fifth adult/bedding and final charge at Exotica on 15 Dec. Voucher covers four, with zero extra beds; exact booking cost ₹14,450 confirmed by the traveller on 15 Nov. Keep ₹3,000 provisionally for the extra adult; final availability/fee unconfirmed.",
+      "title": "Exotica: fifth adult & extra bed",
+      "detail": "Voucher covers four, with no extra bed. Confirm the fifth adult and fee at 15 Dec check-in; ₹3,000 is a reserve. Base booking: ₹14,450.",
       "state": "open",
       "phase": "arrival"
     },
     {
       "id": "pb-hotel",
-      "title": "Pibo Homestay booked for all five · 17–18 Dec",
-      "detail": "Email/PDF checked: Family Room for three + Super Deluxe Room for two, room only, ₹4,004.70 incl GST. Hotel confirms rooms ready on arrival. Check-in 10:00; checkout 09:00.",
+      "title": "Pibo booked for five",
+      "detail": "17–18 Dec · Family Room + Super Deluxe · ₹4,004.70 incl. GST, room only. Check-in 10:00; checkout 09:00; rooms ready after the ferry.",
       "state": "complete"
     },
     {
       "id": "cab",
-      "title": "Pibo Baratang package confirmed · ₹10,000 for five",
-      "detail": "Hotel explicitly confirms airport pickup to Andaman Shores, Baratang cab ₹4,000 and five limestone-cave speedboat tickets ₹6,000. ₹1,000 token requested; receipt/payment not observed. Driver/pickup details still to come. Small unitemised local fees and optional Mud Volcano remain separate; ₹13,000 reserve retained.",
+      "title": "Baratang package confirmed · ₹10,000",
+      "detail": "Includes first airport pickup, cab and five cave-speedboat tickets. ₹1,000 token requested, payment unverified. Driver/timing and local extras to confirm; keep ₹13,000 overall.",
       "state": "complete",
       "phase": "booked"
     },
     {
       "id": "forms",
-      "title": "One snorkelling participant slot still blank",
-      "detail": "Direct booking page rechecked 14 Nov: four names saved, Diver 5 blank; booking still provisional. Private follow-up was sent on 11 Nov; await the remaining submission. No medical answers changed or second deposit paid.",
+      "title": "Snorkelling: check final confirmation",
+      "detail": "At the 14 Nov check, the portal was provisional with one blank participant slot. Confirm forms are complete and approval received. Advance already paid.",
       "state": "open",
       "phase": "before_departure"
     },
     {
       "id": "pickups",
-      "title": "On island arrival: arrange the next activity pickup",
-      "detail": "On 13 Dec at ILE Bay, confirm the 14 Dec early scuba pickup; on 14 Dec, confirm the 15 Dec pre-dawn kayak pickup/return. On Neil arrival, arrange the 16 Dec snorkelling ride and reporting buffer. Final driver details may arrive the previous evening.",
+      "title": "Confirm early activity pickups",
+      "detail": "Confirm scuba on 13 Dec and kayak on 14 Dec. On Neil arrival, arrange your own snorkelling ride and reporting buffer.",
       "state": "open",
       "phase": "arrival"
     },
     {
       "id": "transfers",
-      "title": "On arrival: arrange local rides and ferry transfers",
-      "detail": "Arrange rides locally for five adults plus bags. First airport pickup is in the cab package. Arrange each early jetty ride the previous evening, especially 17 Dec 08:30 reporting; avoid duplicate charges for activity transfers already included. Ask Pibo on 17 Dec to store bags after 09:00 checkout on 18 Dec.",
+      "title": "Arrange local rides",
+      "detail": "Book for five adults plus bags. First airport pickup is included; settle early ferry rides the previous evening. Arrange Pibo bag storage after 09:00 checkout on 18 Dec.",
       "state": "open",
       "phase": "arrival"
     },
     {
       "id": "show",
-      "title": "4 Dec 09:00 IST: scheduled Jail-show booking check",
-      "detail": "One reminder/check is scheduled for five adults on 11 Dec: prefer 17:50 Hindi, 18:50 English fallback. Check the official release window and reporting instructions, then complete the booking. Museum entry is separate; no tickets have been purchased.",
+      "title": "4 Dec · 09:00 · Jail-show reminder",
+      "detail": "Book five for 11 Dec when released: 17:50 Hindi preferred, 18:50 English fallback. Museum entry is separate. Tickets not bought yet.",
       "state": "open",
       "phase": "scheduled"
     },
     {
       "id": "hotels",
-      "title": "During the stay: settle remaining payments as due",
-      "detail": "Per traveller decision, handle balances at the hotel/operator when due, and check the final statement then. Recorded water-activity balances total ₹41,173; do not pay the advances twice. Reconcile Pibo’s ₹2,000 credit and Exotica’s actual charge at settlement, with no pre-trip reconciliation task.",
+      "title": "Settle balances when due",
+      "detail": "Water activities: ₹41,173 remaining. Count advances once; confirm Pibo’s ₹2,000 allocation and the final extra-adult charge at settlement.",
       "state": "open",
       "phase": "during_trip"
     }
@@ -68,7 +68,7 @@
   "days": {
     "11": {
       "headline": "12:25 ticketed arrival · museum 15:00–16:00 · show still to book",
-      "status": "Flight schedule checked · first airport pickup included",
+      "status": "Flight booked · airport pickup included",
       "navigate": "https://www.google.com/maps/dir/?api=1&destination=11.675%2C92.748&travelmode=driving&dir_action=navigate",
       "navLabel": "Cellular Jail",
       "take": [
@@ -76,12 +76,12 @@
         "Private flight/hotel copies",
         "Water + light day bag"
       ],
-      "tonight": "Coordinate tomorrow’s confirmed Baratang package: driver contact, pickup/convoy, waiting, local fees and optional Mud Volcano. Early dinner and bed.",
-      "protect": "If arrival is delayed, move the museum to 17 Dec afternoon instead of stacking another outing."
+      "tonight": "Confirm tomorrow’s Baratang driver, pickup/convoy, waiting and local extras. Eat and sleep early.",
+      "protect": "If delayed, move the museum to 17 Dec afternoon."
     },
     "12": {
       "headline": "~03:00 cab pickup · confirm with the driver",
-      "status": "Pibo confirms ₹10,000 cab + five cave-boat tickets; ₹1,000 token requested",
+      "status": "₹10,000 package confirmed · token unverified",
       "navigate": null,
       "navLabel": null,
       "take": [
@@ -90,12 +90,12 @@
         "Water, snacks + cash for agreed local charges",
         "Charged phone + small torch"
       ],
-      "tonight": "Recover from the full day. Pack for the Havelock ferry; agree tomorrow’s jetty pickup.",
-      "protect": "Caves are planned; Mud Volcano is optional on the day. Confirm the return convoy, waiting and reported local fares before leaving. Main luggage stays at Andaman Shores."
+      "tonight": "Pack for Havelock and arrange tomorrow’s jetty drop.",
+      "protect": "Confirm the return convoy and local extras. Mud Volcano is optional; main bags stay at the hotel."
     },
     "13": {
       "headline": "Report at Haddo 11:30 · ferry sails 12:30",
-      "status": "Ferry booked · follow issued ticket",
+      "status": "Ferry booked",
       "navigate": "https://www.google.com/maps/dir/?api=1&destination=11.68353%2C92.71954&travelmode=driving&dir_action=navigate",
       "navLabel": "Haddo ferry terminal",
       "take": [
@@ -103,12 +103,12 @@
         "All bags",
         "Early or packed lunch + water"
       ],
-      "tonight": "On island arrival, arrange tomorrow’s scuba pickup and breakfast plan. Exact car details are expected by the previous evening; sleep early.",
-      "protect": "Radhanagar is the only optional afternoon outing. Skip it if the hotel stop or rest runs late."
+      "tonight": "Confirm scuba pickup and an early or packed breakfast. Sleep early.",
+      "protect": "Radhanagar is optional; skip it if check-in or rest runs late."
     },
     "14": {
       "headline": "05:30 scuba slot · pickup time still to confirm",
-      "status": "Booked · 50 min underwater · morning finish provisional",
+      "status": "Scuba booked · finish time provisional",
       "navigate": null,
       "navLabel": null,
       "take": [
@@ -117,12 +117,12 @@
         "Dry bag + water",
         "Confirmed pickup instructions"
       ],
-      "tonight": "Pack ferry bags before the early kayak. Confirm the 03:30 programme pickup/return and breakfast plan.",
-      "protect": "Reserve the morning to about 10:00 provisionally. Ask Seahawks about recovery and the following morning’s kayaking; office pin is not the confirmed meeting point."
+      "tonight": "Pack bags; confirm kayak pickup, return and breakfast.",
+      "protect": "Keep the morning free until ~10:00. Confirm pickup; the office pin isn’t the meeting point."
     },
     "15": {
       "headline": "03:30 kayak · report for Makruzz at 12:30",
-      "status": "Kayak/ferry booked · Exotica ₹14,450; fifth-adult fee to check at arrival",
+      "status": "Kayak + ferry booked · fifth adult to check",
       "navigate": "https://www.google.com/maps/dir/?api=1&destination=12.04296%2C92.98322&travelmode=driving&dir_action=navigate",
       "navLabel": "Havelock ferry jetty",
       "take": [
@@ -130,12 +130,12 @@
         "Packed ferry bags + private ticket",
         "Breakfast plan, early/packed lunch + water"
       ],
-      "tonight": "Share tomorrow’s reporting pin, confirm the snorkelling reporting buffer and arrange your own ride.",
-      "protect": "Kayak finish ~05:00 is provisional. Protect recovery, checkout/storage and the two-hour ferry report. Go to sunset only if ready to leave by ~16:00; otherwise use 16 Dec. At Exotica check-in, check the fifth adult, extra bed and final charge; ₹3,000 is only a reserve."
+      "tonight": "Arrange tomorrow’s snorkelling ride and reporting time.",
+      "protect": "Protect 12:30 ferry reporting. Sunset only if ready by ~16:00; confirm Exotica’s fifth-adult fee at check-in."
     },
     "16": {
       "headline": "10:00 snorkelling · confirm the reporting buffer",
-      "status": "Rechecked 14 Nov: four names saved, one participant slot blank",
+      "status": "Snorkelling provisional at the 14 Nov check",
       "navigate": "https://www.google.com/maps/dir/?api=1&destination=11.8360284%2C93.0318112&travelmode=driving&dir_action=navigate",
       "navLabel": "Exact WhatsApp reporting pin",
       "take": [
@@ -144,12 +144,12 @@
         "Water, sun protection + dry bag",
         "Agreed payment method for ₹8,673 group balance"
       ],
-      "tonight": "Pack before bed. Confirm early breakfast, checkout and the 08:30 Neil jetty report; sunrise stays optional.",
-      "protect": "Bridge only after a local daylight low-tide/access check and if back for breakfast by ~08:15. Keep 09:15–12:30 clear for the snorkelling programme; actual operator instructions take priority."
+      "tonight": "Pack; confirm early breakfast, checkout and the 08:30 jetty report.",
+      "protect": "Bridge only at a suitable daylight low tide; back by ~08:15. Keep 09:15–12:30 clear for snorkelling."
     },
     "17": {
       "headline": "Report at Neil jetty 08:30 · ferry sails 09:30",
-      "status": "Ferry and Pibo for all five confirmed · rooms ready on arrival",
+      "status": "Ferry + Pibo confirmed for five",
       "navigate": "https://www.google.com/maps/dir/?api=1&destination=11.83927%2C93.03259&travelmode=driving&dir_action=navigate",
       "navLabel": "Neil ferry jetty",
       "take": [
@@ -157,12 +157,12 @@
         "Private ferry ticket",
         "Early breakfast or takeaway plan"
       ],
-      "tonight": "Pack for 09:00 Pibo checkout. Arrange bag storage and the airport car for the booked 13:05 departure; keep the one-hour Chennai T1 connection in mind.",
-      "protect": "Skip Sitapur if it threatens breakfast, checkout or the ferry report. After arrival, choose one outing; Cellular Jail is a fallback only if missed on 11 Dec."
+      "tonight": "Pack for 09:00 checkout; arrange bag storage and the airport car.",
+      "protect": "Sunrise must preserve 08:30 reporting. Choose one afternoon outing; Jail is a fallback if missed."
     },
     "18": {
       "headline": "Pibo checkout 09:00 · airport target 10:45–11:00 · flight 13:05",
-      "status": "Return flight checked · Chennai connection 15:20–16:20",
+      "status": "Flight booked · one-hour Chennai connection",
       "navigate": "https://www.google.com/maps/dir/?api=1&destination=11.651885%2C92.733522&travelmode=driving&dir_action=navigate",
       "navLabel": "Airport terminal area",
       "take": [
@@ -170,8 +170,8 @@
         "All bags, chargers + valuables",
         "Both boarding passes; one-hour Chennai T1 transfer"
       ],
-      "tonight": "Trip home; check rooms and vehicle for belongings before leaving.",
-      "protect": "Release rooms by 09:00 and arrange luggage storage until the 10:15–10:30 pickup target. Aim for the airport 10:45–11:00. Flights: IXZ13:05–MAA15:20, MAA16:20–BLR17:25. No sightseeing today."
+      "tonight": "Check rooms and the car for belongings.",
+      "protect": "Checkout 09:00; pickup target 10:15–10:30, airport 10:45–11:00. Flights 13:05–15:20, then 16:20–17:25."
     }
   },
   "packing": [
@@ -185,15 +185,15 @@
         },
         {
           "id": "tickets",
-          "label": "Open the trip document wallet; use Save for offline before weak-signal journeys"
+          "label": "Save the document wallet for offline use"
         },
         {
           "id": "maps",
-          "label": "Save reporting pins and a local map before weak-signal journeys"
+          "label": "Save reporting pins and a local map"
         },
         {
           "id": "payments",
-          "label": "Agree cash/UPI/card coverage for balances and local charges; advances are already included"
+          "label": "Cash/UPI/card for balances and local extras"
         }
       ]
     },
@@ -215,7 +215,7 @@
         },
         {
           "id": "forms",
-          "label": "Complete your own required forms and follow operator screening/instructions"
+          "label": "Required forms and operator instructions"
         }
       ]
     },
@@ -255,7 +255,7 @@
         },
         {
           "id": "links",
-          "label": "Open your day links and check Google Maps before leaving the hotel"
+          "label": "Open tomorrow’s directions before leaving"
         }
       ]
     }
