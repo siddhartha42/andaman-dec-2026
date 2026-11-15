@@ -31,10 +31,10 @@
     },
     {
       "id": "forms",
-      "title": "Snorkelling: check final confirmation",
-      "detail": "At the 14 Nov check, the portal was provisional with one blank participant slot. Confirm forms are complete and approval received. Advance already paid.",
-      "state": "open",
-      "phase": "before_departure"
+      "title": "Snorkelling confirmed",
+      "detail": "Turquoise Dream confirmed the booking in WhatsApp. Five adults · 16 Dec at 10:00 · agreed 45-minute option. ₹8,673 remains; arrange your own reporting-point ride.",
+      "state": "complete",
+      "phase": "booked"
     },
     {
       "id": "pickups",
@@ -55,7 +55,8 @@
       "title": "4 Dec · 09:00 · Jail-show reminder",
       "detail": "Book five for 11 Dec when released: 17:50 Hindi preferred, 18:50 English fallback. Museum entry is separate. Tickets not bought yet.",
       "state": "open",
-      "phase": "scheduled"
+      "phase": "scheduled",
+      "shortTitle": "Cellular Jail show tickets"
     },
     {
       "id": "hotels",
@@ -135,7 +136,7 @@
     },
     "16": {
       "headline": "10:00 snorkelling · confirm the reporting buffer",
-      "status": "Snorkelling provisional at the 14 Nov check",
+      "status": "Confirmed in WhatsApp · five adults",
       "navigate": "https://www.google.com/maps/dir/?api=1&destination=11.8360284%2C93.0318112&travelmode=driving&dir_action=navigate",
       "navLabel": "Exact WhatsApp reporting pin",
       "take": [
