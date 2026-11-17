@@ -1,0 +1,200 @@
+{
+  "updated": "2026-11-17",
+  "scope": "One adult · 11–18 December 2026",
+  "pricePolicy": "Suggested spending ranges, not verified Amazon prices. Search links let you choose your size and seller. Check delivery to your PIN code.",
+  "groups": [
+    {
+      "id": "water-kit",
+      "title": "Water-activity kit",
+      "items": [
+        {
+          "id": "dry-bag",
+          "title": "10 L roll-top dry bag",
+          "quantity": "1",
+          "detail": "For boat rides, kayak and a dry change. Choose sealed seams; test it empty and keep it above water.",
+          "budget": [
+            500,
+            900
+          ],
+          "amazonQuery": "10 litre roll top waterproof dry bag sealed seams"
+        },
+        {
+          "id": "swim-top",
+          "title": "Long-sleeve swim / rash top",
+          "quantity": "1",
+          "detail": "For the three activity mornings. Look for labelled UPF 50+ swim fabric and a comfortable fit.",
+          "budget": [
+            700,
+            1500
+          ],
+          "amazonQuery": "men full sleeve swimming rash guard UPF 50"
+        },
+        {
+          "id": "swim-shorts",
+          "title": "Quick-dry swim shorts",
+          "quantity": "2 pairs",
+          "detail": "Alternate pairs over three consecutive water-activity mornings. Reuse your existing swimwear.",
+          "budget": [
+            600,
+            1000
+          ],
+          "amazonQuery": "men quick dry swimming shorts drawstring"
+        },
+        {
+          "id": "sunscreen",
+          "title": "Water-resistant SPF 50 sunscreen",
+          "quantity": "2 × 80 g to start",
+          "detail": "Use one that suits your skin and the operator’s rules; replenish as needed. Example: Neutrogena Ultra Sheer SPF 50+ PA++++.",
+          "budget": [
+            900,
+            1400
+          ],
+          "amazonQuery": "Neutrogena Ultra Sheer sunscreen SPF 50 PA 80g",
+          "source": "https://www.neutrogena.in/sun/ultra-sheer-sunscreen"
+        },
+        {
+          "id": "towel",
+          "title": "Quick-dry travel towel",
+          "quantity": "1 · about 140 × 70 cm",
+          "detail": "A body-size towel for the three activity days. Check dimensions: a small gym hand towel won’t do the same job.",
+          "budget": [
+            350,
+            600
+          ],
+          "amazonQuery": "microfiber quick dry travel towel 140 70 cm"
+        },
+        {
+          "id": "repellent",
+          "title": "Mosquito repellent",
+          "quantity": "1 small tube / bottle",
+          "detail": "For the pre-dawn kayak, Baratang and evenings. Pick one you tolerate; follow its label.",
+          "budget": [
+            100,
+            200
+          ],
+          "amazonQuery": "Odomos mosquito repellent cream 100g"
+        },
+        {
+          "id": "hat",
+          "title": "Sun hat or cap",
+          "quantity": "1",
+          "detail": "For beaches, jetty waits and boat rides. A secure fit or chin cord helps.",
+          "budget": [
+            250,
+            450
+          ],
+          "amazonQuery": "sun hat wide brim chin strap men"
+        },
+        {
+          "id": "wet-bags",
+          "title": "Bags for wet swimwear",
+          "quantity": "2 · reuse if possible",
+          "detail": "Keep damp clothes separate on ferry and hotel changes. Reuse zip bags you already have.",
+          "budget": [
+            100,
+            200
+          ],
+          "amazonQuery": "reusable waterproof wet clothes bag travel"
+        }
+      ]
+    },
+    {
+      "id": "only-if-missing",
+      "title": "Only if missing · reuse or share",
+      "items": [
+        {
+          "id": "footwear",
+          "title": "Grippy footwear",
+          "quantity": "1 suitable pair",
+          "detail": "Use broken-in trainers for caves and rocky paths; sandals for beaches. Buy only if your existing pair won’t work.",
+          "budget": [
+            600,
+            1200
+          ],
+          "amazonQuery": "outdoor sandals men anti slip heel strap"
+        },
+        {
+          "id": "power-bank",
+          "title": "10,000 mAh USB-C power bank",
+          "quantity": "1 + your charging cable",
+          "detail": "For long cab and ferry days. Reuse a working one; Ambrane Force 10K is one example of wired USB-C PD.",
+          "budget": [
+            1000,
+            1400
+          ],
+          "amazonQuery": "Ambrane Force 10K 10000mAh power bank USB C PD",
+          "source": "https://ambraneindia.com/products/force"
+        },
+        {
+          "id": "torch",
+          "title": "Small torch / headlamp",
+          "quantity": "2 for the group",
+          "detail": "For Baratang and walking to pre-dawn pickups. Coordinate before buying five; follow the kayak guide’s lighting instructions on the water.",
+          "budget": [
+            250,
+            500
+          ],
+          "budgetUnit": "each",
+          "amazonQuery": "small LED torch headlamp travel"
+        },
+        {
+          "id": "rain-layer",
+          "title": "Light rain layer",
+          "quantity": "1",
+          "detail": "Pack a poncho or lightweight rain jacket you own. A heavy trekking jacket isn’t needed for this plan.",
+          "budget": [
+            250,
+            500
+          ],
+          "amazonQuery": "lightweight reusable rain poncho adult"
+        },
+        {
+          "id": "sunglasses",
+          "title": "UV-protective sunglasses",
+          "quantity": "1 pair",
+          "detail": "For bright beach and boat days. Look for labelled UV400 / UV protection.",
+          "budget": [
+            400,
+            800
+          ],
+          "amazonQuery": "sunglasses UV400 protection men"
+        },
+        {
+          "id": "first-aid",
+          "title": "Small first-aid pouch",
+          "quantity": "1 for the group",
+          "detail": "Plasters, gauze, tape and cleansing wipes. Bring personal prescribed medicines separately.",
+          "budget": [
+            150,
+            300
+          ],
+          "amazonQuery": "small first aid pouch bandages gauze tape wipes"
+        }
+      ]
+    }
+  ],
+  "packFromHome": [
+    "5–6 light tops, 2 everyday shorts, 1 light trouser, 8 underwear, 3 pairs of socks and sleepwear.",
+    "A small daypack, refillable water bottle, phone charger, cables and toiletries.",
+    "Original photo ID, offline document wallet, payment cards / cash and your personal medicines."
+  ],
+  "skip": "Skip a new suitcase, action camera or personal snorkel set for this trip unless you already wanted one. Turquoise Dream includes snorkelling equipment; a phone pouch is optional and isn’t a diving case.",
+  "sources": [
+    {
+      "title": "Neutrogena India · sunscreen specifications",
+      "url": "https://www.neutrogena.in/sun/ultra-sheer-sunscreen"
+    },
+    {
+      "title": "Ambrane · Force 10K specifications",
+      "url": "https://ambraneindia.com/products/force"
+    },
+    {
+      "title": "Turquoise Dream · snorkelling equipment included",
+      "url": "https://turquoisedream.in/dive-programs/snorkeling"
+    },
+    {
+      "title": "IndiGo · cabin baggage and power banks",
+      "url": "https://www.goindigo.in/baggage/cabin-baggage.html"
+    }
+  ]
+}
