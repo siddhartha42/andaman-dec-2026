@@ -1,100 +1,168 @@
 {
   "updated": "2026-11-17",
-  "scope": "One adult · 11–18 December 2026",
-  "pricePolicy": "Suggested spending ranges, not verified Amazon prices. Search links let you choose your size and seller. Check delivery to your PIN code.",
+  "scope": "Personal shortlist · UK 8 shoes · usual top S / M · 11–18 December 2026",
+  "pricePolicy": "One direct product page per unowned item. Prices observed on17Nov2026 for the linked product/variant, not final checkout totals. Delivery depends on your PIN code.",
   "groups": [
     {
+      "id": "clothing-footwear",
+      "title": "Your clothing & footwear",
+      "items": [
+        {
+          "id": "ribbed-tank",
+          "title": "Ribbed tank top",
+          "quantity": "Start with 1; 2 if you want a spare",
+          "detail": "DaMENSCH Elemental, khaki green. M was shown in stock. For dry beach / casual wear; use the size chart if between S and M.",
+          "product": {
+            "name": "DaMENSCH Ribbed Elemental Tank Top · Khaki Green · M",
+            "url": "https://www.amazon.in/dp/B0GWHYQ785",
+            "retailer": "Amazon",
+            "priceINR": 499,
+            "priceUnit": "each",
+            "checked": "2026-11-17",
+            "sizeChecked": "M"
+          }
+        },
+        {
+          "id": "water-shoes",
+          "title": "Compact beach / water shoes",
+          "quantity": "1 pair · UK 8–8.5",
+          "detail": "Aquashoes 120 are the small-packing beach pick. Keep proper walking shoes for Baratang; let the instructor fit your scuba fins.",
+          "product": {
+            "name": "Subea Aquashoes 120 · Laguna",
+            "url": "https://www.decathlon.in/p/8851100/adult-water-shoes-aquashoes-120-lagoon",
+            "retailer": "Decathlon",
+            "priceINR": 799,
+            "priceUnit": "pair",
+            "checked": "2026-11-17",
+            "sizeChecked": "UK 8–8.5 selected; Add to cart available"
+          }
+        },
+        {
+          "id": "footwear",
+          "title": "Trail walking shoes · only if needed",
+          "quantity": "1 pair · UK 8",
+          "detail": "Quechua NH50 for Baratang paths and longer walks. Reuse suitable trainers if owned; wear them on the flight to save bag space.",
+          "product": {
+            "name": "Quechua NH50 low-ankle trail walking shoes · Black",
+            "url": "https://www.decathlon.in/p/8844095/men-s-hiking-boots-nh50-black",
+            "retailer": "Decathlon",
+            "priceINR": 999,
+            "priceUnit": "pair",
+            "checked": "2026-11-17",
+            "sizeChecked": "UK 8 selected"
+          }
+        },
+        {
+          "id": "swim-top",
+          "title": "Long-sleeve rash top · optional",
+          "quantity": "1 · try S / M",
+          "detail": "Olaian 100 for kayak / snorkelling sun coverage. Optional under the scuba wetsuit; a cotton ribbed tank serves a different purpose.",
+          "product": {
+            "name": "Olaian Surfing UV Rash Guard 100 · Grey",
+            "url": "https://www.decathlon.in/p/8611954/men-surfing-uv-rash-guard-100-long-sleeved-grey",
+            "retailer": "Decathlon",
+            "priceINR": 999,
+            "priceUnit": "",
+            "checked": "2026-11-17",
+            "sizeChecked": "M selected; Add to cart available"
+          }
+        },
+        {
+          "id": "swim-shorts",
+          "title": "Your fitted Decathlon swim shorts",
+          "quantity": "Already own · pack these",
+          "detail": "Suitable swimwear under the supplied scuba wetsuit. A loose pair isn’t a required purchase.",
+          "owned": true
+        }
+      ]
+    },
+    {
       "id": "water-kit",
-      "title": "Water-activity kit",
+      "title": "Boat & beach essentials",
       "items": [
         {
           "id": "dry-bag",
           "title": "10 L roll-top dry bag",
           "quantity": "1",
-          "detail": "For boat rides, kayak and a dry change. Choose sealed seams; test it empty and keep it above water.",
-          "budget": [
-            500,
-            900
-          ],
-          "amazonQuery": "10 litre roll top waterproof dry bag sealed seams"
-        },
-        {
-          "id": "swim-top",
-          "title": "Long-sleeve swim / rash top",
-          "quantity": "1",
-          "detail": "For the three activity mornings. Look for labelled UPF 50+ swim fabric and a comfortable fit.",
-          "budget": [
-            700,
-            1500
-          ],
-          "amazonQuery": "men full sleeve swimming rash guard UPF 50"
-        },
-        {
-          "id": "swim-shorts",
-          "title": "Quick-dry swim shorts",
-          "quantity": "2 pairs",
-          "detail": "Alternate pairs over three consecutive water-activity mornings. Reuse your existing swimwear.",
-          "budget": [
-            600,
-            1000
-          ],
-          "amazonQuery": "men quick dry swimming shorts drawstring"
+          "detail": "Tribord IPX6: a more established option than the generic bags. For boat splashes and a dry change; keep above water.",
+          "product": {
+            "name": "Tribord IPX6 10 L dry bag · Orange",
+            "url": "https://www.decathlon.in/p/8826348/waterproof-bag-ipx6-10-l-orange",
+            "retailer": "Decathlon",
+            "priceINR": 999,
+            "priceUnit": "",
+            "checked": "2026-11-17"
+          }
         },
         {
           "id": "sunscreen",
           "title": "Water-resistant SPF 50 sunscreen",
-          "quantity": "2 × 80 g to start",
-          "detail": "Use one that suits your skin and the operator’s rules; replenish as needed. Example: Neutrogena Ultra Sheer SPF 50+ PA++++.",
-          "budget": [
-            900,
-            1400
-          ],
-          "amazonQuery": "Neutrogena Ultra Sheer sunscreen SPF 50 PA 80g",
-          "source": "https://www.neutrogena.in/sun/ultra-sheer-sunscreen"
+          "quantity": "2 × 80 g · ₹1,294 total",
+          "detail": "Neutrogena Ultra Sheer SPF 50+ PA++++. Reuse one that suits your skin and the operator’s rules; replenish as needed.",
+          "product": {
+            "name": "Neutrogena Ultra Sheer SPF 50+ PA++++ · 80 g",
+            "url": "https://www.amazon.in/dp/B082PFY9S7",
+            "retailer": "Amazon",
+            "priceINR": 647,
+            "priceUnit": "per 80 g tube",
+            "checked": "2026-11-17"
+          }
         },
         {
           "id": "towel",
-          "title": "Quick-dry travel towel",
-          "quantity": "1 · about 140 × 70 cm",
-          "detail": "A body-size towel for the three activity days. Check dimensions: a small gym hand towel won’t do the same job.",
-          "budget": [
-            350,
-            600
-          ],
-          "amazonQuery": "microfiber quick dry travel towel 140 70 cm"
+          "title": "Compact quick-dry towel",
+          "quantity": "1 · 80 × 130 cm",
+          "detail": "Nabaiji size L: a body-size, thin travel towel that packs smaller than a plush bath towel.",
+          "product": {
+            "name": "Nabaiji microfibre towel size L · Black",
+            "url": "https://www.decathlon.in/p/8926376/microfibre-towel-size-l-80-x-130-cm-black",
+            "retailer": "Decathlon",
+            "priceINR": 399,
+            "priceUnit": "",
+            "checked": "2026-11-17"
+          }
         },
         {
           "id": "repellent",
           "title": "Mosquito repellent",
-          "quantity": "1 small tube / bottle",
-          "detail": "For the pre-dawn kayak, Baratang and evenings. Pick one you tolerate; follow its label.",
-          "budget": [
-            100,
-            200
-          ],
-          "amazonQuery": "Odomos mosquito repellent cream 100g"
+          "quantity": "1 tube needed; link is a 2-pack",
+          "detail": "Odomos Naturals 100 g × 2. Share the spare tube with the group; follow the label.",
+          "product": {
+            "name": "Odomos Naturals mosquito repellent · 100 g × 2",
+            "url": "https://www.amazon.in/dp/B0BCGGSP3V",
+            "retailer": "Amazon",
+            "priceINR": 245,
+            "priceUnit": "for 2-pack",
+            "checked": "2026-11-17"
+          }
         },
         {
           "id": "hat",
-          "title": "Sun hat or cap",
-          "quantity": "1",
-          "detail": "For beaches, jetty waits and boat rides. A secure fit or chin cord helps.",
-          "budget": [
-            250,
-            450
-          ],
-          "amazonQuery": "sun hat wide brim chin strap men"
+          "title": "Foldable sun hat",
+          "quantity": "1 · reuse your own if suitable",
+          "detail": "Northwind wide brim with mesh and an adjustable chin strap, for beach days and jetty waits.",
+          "product": {
+            "name": "Northwind wide-brim sun hat with chin strap",
+            "url": "https://www.amazon.in/dp/B0GVZDJPWK",
+            "retailer": "Amazon",
+            "priceINR": 449,
+            "priceUnit": "",
+            "checked": "2026-11-17"
+          }
         },
         {
           "id": "wet-bags",
           "title": "Bags for wet swimwear",
-          "quantity": "2 · reuse if possible",
-          "detail": "Keep damp clothes separate on ferry and hotel changes. Reuse zip bags you already have.",
-          "budget": [
-            100,
-            200
-          ],
-          "amazonQuery": "reusable waterproof wet clothes bag travel"
+          "quantity": "2; reuse zip bags if owned",
+          "detail": "Maindais two-pack keeps damp clothes separate on hotel and ferry changes.",
+          "product": {
+            "name": "Maindais reusable wet bags · Black · 2-pack",
+            "url": "https://www.amazon.in/dp/B0D8QFLR5N",
+            "retailer": "Amazon",
+            "priceINR": 285.95,
+            "priceUnit": "for 2-pack",
+            "checked": "2026-11-17"
+          }
         }
       ]
     },
@@ -103,72 +171,74 @@
       "title": "Only if missing · reuse or share",
       "items": [
         {
-          "id": "footwear",
-          "title": "Grippy footwear",
-          "quantity": "1 suitable pair",
-          "detail": "Use broken-in trainers for caves and rocky paths; sandals for beaches. Buy only if your existing pair won’t work.",
-          "budget": [
-            600,
-            1200
-          ],
-          "amazonQuery": "outdoor sandals men anti slip heel strap"
-        },
-        {
           "id": "power-bank",
           "title": "10,000 mAh USB-C power bank",
           "quantity": "1 + your charging cable",
-          "detail": "For long cab and ferry days. Reuse a working one; Ambrane Force 10K is one example of wired USB-C PD.",
-          "budget": [
-            1000,
-            1400
-          ],
-          "amazonQuery": "Ambrane Force 10K 10000mAh power bank USB C PD",
-          "source": "https://ambraneindia.com/products/force"
+          "detail": "Ambrane Force 10K, Purple. Reuse a working power bank; this one is only a replacement option.",
+          "product": {
+            "name": "Ambrane Force 10K · Purple",
+            "url": "https://www.amazon.in/dp/B0CTQ9CZ1N",
+            "retailer": "Amazon",
+            "priceINR": 1399,
+            "priceUnit": "",
+            "checked": "2026-11-17"
+          }
         },
         {
           "id": "torch",
-          "title": "Small torch / headlamp",
+          "title": "Small rechargeable torch",
           "quantity": "2 for the group",
-          "detail": "For Baratang and walking to pre-dawn pickups. Coordinate before buying five; follow the kayak guide’s lighting instructions on the water.",
-          "budget": [
-            250,
-            500
-          ],
-          "budgetUnit": "each",
-          "amazonQuery": "small LED torch headlamp travel"
+          "detail": "Eveready Glowstick DL103, USB-C. Coordinate before buying five; use on land and follow the kayak guide’s lighting instructions.",
+          "product": {
+            "name": "Eveready Glowstick DL103",
+            "url": "https://www.amazon.in/dp/B0H4MC1FFR",
+            "retailer": "Amazon",
+            "priceINR": 145,
+            "priceUnit": "each",
+            "checked": "2026-11-17"
+          }
         },
         {
           "id": "rain-layer",
-          "title": "Light rain layer",
-          "quantity": "1",
-          "detail": "Pack a poncho or lightweight rain jacket you own. A heavy trekking jacket isn’t needed for this plan.",
-          "budget": [
-            250,
-            500
-          ],
-          "amazonQuery": "lightweight reusable rain poncho adult"
+          "title": "Packable rain poncho",
+          "quantity": "1 · reuse a rain layer if owned",
+          "detail": "Rocksport reusable polyester poncho. Selected over the disposable listings; no heavy jacket needed.",
+          "product": {
+            "name": "Rocksport unisex hooded rain poncho",
+            "url": "https://www.amazon.in/dp/B095SK62SD",
+            "retailer": "Amazon",
+            "priceINR": 658,
+            "priceUnit": "",
+            "checked": "2026-11-17"
+          }
         },
         {
           "id": "sunglasses",
           "title": "UV-protective sunglasses",
-          "quantity": "1 pair",
-          "detail": "For bright beach and boat days. Look for labelled UV400 / UV protection.",
-          "budget": [
-            400,
-            800
-          ],
-          "amazonQuery": "sunglasses UV400 protection men"
+          "quantity": "1 pair · reuse if owned",
+          "detail": "Vincent Chase square polarized sunglasses. Check the frame dimensions for fit.",
+          "product": {
+            "name": "Vincent Chase by Lenskart polarized square sunglasses",
+            "url": "https://www.amazon.in/dp/B0999SJPWC",
+            "retailer": "Amazon",
+            "priceINR": 799,
+            "priceUnit": "",
+            "checked": "2026-11-17"
+          }
         },
         {
           "id": "first-aid",
-          "title": "Small first-aid pouch",
+          "title": "Compact first-aid kit",
           "quantity": "1 for the group",
-          "detail": "Plasters, gauze, tape and cleansing wipes. Bring personal prescribed medicines separately.",
-          "budget": [
-            150,
-            300
-          ],
-          "amazonQuery": "small first aid pouch bandages gauze tape wipes"
+          "detail": "Hansaplast 9-item / 35-piece kit. Reuse a stocked pouch if you have one; personal medicines stay separate.",
+          "product": {
+            "name": "Hansaplast Fast Aid Kit · 35 pieces",
+            "url": "https://www.amazon.in/dp/B0F4D8VRWP",
+            "retailer": "Amazon",
+            "priceINR": 399,
+            "priceUnit": "",
+            "checked": "2026-11-17"
+          }
         }
       ]
     }
@@ -178,7 +248,7 @@
     "A small daypack, refillable water bottle, phone charger, cables and toiletries.",
     "Original photo ID, offline document wallet, payment cards / cash and your personal medicines."
   ],
-  "skip": "Skip a new suitcase, action camera or personal snorkel set for this trip unless you already wanted one. Turquoise Dream includes snorkelling equipment; a phone pouch is optional and isn’t a diving case.",
+  "skip": "Seahawks provides scuba equipment, including the wetsuit, mask and fins. Turquoise Dream includes snorkelling equipment. Your beach shoes are for shore use; let the instructor fit the dive fins.",
   "sources": [
     {
       "title": "Neutrogena India · sunscreen specifications",
@@ -195,6 +265,19 @@
     {
       "title": "IndiGo · cabin baggage and power banks",
       "url": "https://www.goindigo.in/baggage/cabin-baggage.html"
+    },
+    {
+      "title": "Seahawks · scuba equipment included",
+      "url": "https://www.seahawksscuba.in/index"
     }
-  ]
+  ],
+  "scuba": {
+    "title": "For your scuba morning",
+    "items": [
+      "Wear your fitted swim shorts under the supplied wetsuit.",
+      "Bring a towel, dry change, water and a dry bag for the boat.",
+      "A rash top is optional; specialist scuba equipment is provided."
+    ],
+    "source": "https://www.seahawksscuba.in/index"
+  }
 }
