@@ -9,18 +9,19 @@
       "items": [
         {
           "id": "ribbed-tank",
-          "title": "Ribbed tank top",
-          "quantity": "Start with 1; 2 if you want a spare",
-          "detail": "DaMENSCH Elemental, khaki green. M was shown in stock. For dry beach / casual wear; use the size chart if between S and M.",
+          "title": "Black ribbed tank · choose one",
+          "quantity": "Optional · compare the outfit guide",
+          "detail": "Classic black ribbed tank. M checked; compare H&M white and the sleeveless T-shirt in the outfit guide before choosing.",
           "product": {
-            "name": "DaMENSCH Ribbed Elemental Tank Top · Khaki Green · M",
-            "url": "https://www.amazon.in/dp/B0GWHYQ785",
-            "retailer": "Amazon",
-            "priceINR": 499,
+            "name": "Uniqlo Dry Color Ribbed Tank Top · Black · M",
+            "url": "https://www.uniqlo.com/in/en/products/E465189-000/00?colorDisplayCode=09&sizeDisplayCode=004",
+            "retailer": "Uniqlo",
+            "priceINR": 490,
             "priceUnit": "each",
             "checked": "2026-11-17",
-            "sizeChecked": "M"
-          }
+            "sizeChecked": "Black M selected; in stock"
+          },
+          "progressKey": "ribbed-tank-uniqlo-black"
         },
         {
           "id": "water-shoes",
@@ -279,5 +280,109 @@
       "A rash top is optional; specialist scuba equipment is provided."
     ],
     "source": "https://www.seahawksscuba.in/index"
+  },
+  "clothingOptions": {
+    "title": "Better tanks & outfit ideas",
+    "intro": "A mix of fitted basics and relaxed shirts. Choose one tank, one shirt and one bottom; reuse suitable pieces you already own.",
+    "products": [
+      {
+        "id": "white-tank",
+        "title": "H&M white ribbed tank",
+        "retailer": "H&M",
+        "priceINR": 799,
+        "url": "https://www2.hm.com/en_in/productpage.1320411001.html",
+        "image": "assets/outfits/white-tank.jpg",
+        "detail": "Fitted option · S and M listed available. Cotton with stretch; wear alone or under an open shirt.",
+        "checked": "2026-11-17"
+      },
+      {
+        "id": "black-tank",
+        "title": "Uniqlo black ribbed tank",
+        "retailer": "Uniqlo",
+        "priceINR": 490,
+        "url": "https://www.uniqlo.com/in/en/products/E465189-000/00?colorDisplayCode=09&sizeDisplayCode=004",
+        "image": "assets/outfits/black-tank.jpg",
+        "detail": "Value option · black M checked in stock. A simpler ribbed basic for layering.",
+        "checked": "2026-11-17"
+      },
+      {
+        "id": "loose-sleeveless",
+        "title": "AIRism cotton sleeveless T-shirt",
+        "retailer": "Uniqlo",
+        "priceINR": 990,
+        "url": "https://www.uniqlo.com/in/en/products/E457517-000/00?colorDisplayCode=38&sizeDisplayCode=004",
+        "image": "assets/outfits/loose-sleeveless.jpg",
+        "detail": "Higher-neck option · dark brown M checked. For a T-shirt-like sleeveless look.",
+        "checked": "2026-11-17"
+      },
+      {
+        "id": "sky-shirt",
+        "title": "Symbol sky-blue cotton shirt",
+        "retailer": "Amazon",
+        "priceINR": 549,
+        "url": "https://www.amazon.in/dp/B07KXBC7HD",
+        "image": "assets/outfits/sky-shirt.jpg",
+        "detail": "Regular fit · M checked. 100% cotton; wear open with rolled sleeves or buttoned.",
+        "checked": "2026-11-17"
+      },
+      {
+        "id": "navy-shirt",
+        "title": "INKAST navy textured shirt",
+        "retailer": "Amazon",
+        "priceINR": 579,
+        "url": "https://www.amazon.in/dp/B0G2YDB4V5",
+        "image": "assets/outfits/navy-shirt.jpg",
+        "detail": "Regular fit · M checked. Listed as cotton blend; linen percentage isn’t stated.",
+        "checked": "2026-11-17"
+      },
+      {
+        "id": "fawn-shorts",
+        "title": "Symbol fawn chino shorts",
+        "retailer": "Amazon",
+        "priceINR": 649,
+        "url": "https://www.amazon.in/dp/B07XD462BC",
+        "image": "assets/outfits/fawn-shorts.jpg",
+        "detail": "Waist 30 checked. 100% cotton, above-knee length; choose 28/30 using the chart.",
+        "checked": "2026-11-17"
+      },
+      {
+        "id": "ecru-trousers",
+        "title": "DIVISIVE ecru relaxed trousers",
+        "retailer": "Amazon",
+        "priceINR": 719,
+        "url": "https://www.amazon.in/dp/B0DK742Q5X",
+        "image": "assets/outfits/ecru-trousers.jpg",
+        "detail": "Waist 30 checked. Linen blend with a partially elasticated drawstring waist; fibre percentages aren’t stated.",
+        "checked": "2026-11-17"
+      }
+    ],
+    "looks": [
+      {
+        "title": "Clean beach look",
+        "parts": [
+          "white-tank",
+          "fawn-shorts"
+        ],
+        "note": "White ribbed tank + fawn shorts + your sandals. Add your sun hat for the daytime."
+      },
+      {
+        "title": "Relaxed island day",
+        "parts": [
+          "black-tank",
+          "sky-shirt",
+          "fawn-shorts"
+        ],
+        "note": "Wear the blue shirt open over the black tank; roll the sleeves. The same shorts work again."
+      },
+      {
+        "title": "Sunset / dinner",
+        "parts": [
+          "navy-shirt",
+          "ecru-trousers"
+        ],
+        "note": "Button the navy shirt with ecru relaxed trousers and your existing footwear."
+      }
+    ],
+    "note": "Prices checked 17 Nov. Tops in M and bottoms in waist 30 checked; use each brand’s size chart. Photos: linked retailers."
   }
 }
