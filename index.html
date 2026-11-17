@@ -4628,6 +4628,21 @@ body { line-height: 1.65; }
   document.getElementById('shopping-home').innerHTML=data.packFromHome.map(item=>`<li>${esc(item)}</li>`).join('');
   document.getElementById('shopping-skip').textContent=data.skip;
   document.getElementById('shopping-sources').innerHTML=data.sources.map(source=>`<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title)} ↗</a></li>`).join('');
+  // The embedded map can grow after the browser first follows a fragment link.
+  const landing=document.getElementById(location.hash.slice(1));
+  if(landing&&['shopping','personal-packing'].includes(landing.id)){
+    const align=()=>landing.scrollIntoView({block:'start',behavior:'instant'});
+    const resize=new ResizeObserver(align);
+    const frame=document.getElementById('codex-visualization');
+    if(frame)resize.observe(frame);
+    const events=['pointerdown','wheel','touchstart','keydown','hashchange'];
+    const stop=()=>{resize.disconnect();window.removeEventListener('load',align);events.forEach(event=>window.removeEventListener(event,stop));};
+    events.forEach(event=>window.addEventListener(event,stop,{once:true,passive:true}));
+    window.addEventListener('load',align,{once:true});
+    requestAnimationFrame(align);
+    setTimeout(stop,5000);
+  }
+
 })();
 </script>
 </body>
